@@ -1,0 +1,127 @@
+#rq_page_section{
+    background-color: var(--toss-bg);
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+.personas_label_box, .userInt_label_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.personas_label, .userInt_label{
+    margin: 6px;
+    padding: 4px 16px;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--red);
+    font-size: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--red);
+}
+#personas_radio_1:checked ~ .personas_label_box > #personas_label_1{
+    background-color: var(--red);
+    color: var(--white);
+}
+#personas_radio_2:checked ~ .personas_label_box > #personas_label_2{
+    background-color: var(--red);
+    color: var(--white);
+}
+#userInt_radio_1:checked ~ .userInt_label_box > #userInt_label_1{
+    background-color: var(--red);
+    color: var(--white);
+}
+#userInt_radio_2:checked ~ .userInt_label_box > #userInt_label_2{
+    background-color: var(--red);
+    color: var(--white);
+}
+.personas_textBox{
+    display: none;
+    width: 640px;
+    margin: auto;
+    margin-top: 42px;
+    align-items: start;
+    justify-content: space-between;
+}
+.personas_textBox_left > img{
+    margin-bottom: 12px;
+}
+.personas_textBox_right > div{
+    margin-bottom: 12px;
+}
+.personas_textBox > div{
+    width: 300px;
+    padding: 12px;
+    text-align: center;
+}
+#personas_radio_1:checked ~ #personas_textBox_1{
+    display: flex;
+}
+#personas_radio_2:checked ~ #personas_textBox_2{
+    display: flex;
+}
+#userInt_radio_1:checked ~ #userInt_textBox_1{
+    display: block;
+}
+#userInt_radio_2:checked ~ #userInt_textBox_2{
+    display: block;
+}
+
+.userInt_textBox{
+    width: 640px;
+    margin: auto;
+    display: none;
+    margin-top: 42px;
+}
+
+.q{
+    text-decoration: underline;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+.a{
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+
+.moscow_textbox{
+    width: 640px;
+    margin: auto;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    transition: all .4s ease-in-out;
+}
+.moscow_textbox_title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 32px);
+    padding: 16px;
+    border-radius: 8px;
+    background-color: var(--red);
+    color: var(--white);
+    cursor: pointer;
+}
+
+#moscow_checkbox_1:checked ~ #moscow_textbox_1{
+    height: auto;
+    overflow: auto;
+}
+#moscow_checkbox_2:checked ~ #moscow_textbox_2{
+    height: auto;
+    overflow: auto;
+}
+#moscow_checkbox_3:checked ~ #moscow_textbox_3{
+    height: auto;
+    overflow: auto;
+}
+#moscow_checkbox_4:checked ~ #moscow_textbox_4{
+    height: auto;
+    overflow: auto;
+}
+.moscow_text{
+    padding: 16px;
+    background-color: white;
+}

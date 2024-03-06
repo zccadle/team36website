@@ -1,0 +1,28 @@
+#Implementation_section{
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-color: var(--toss-bg);
+}
+.system_design_img{
+    display: block;
+    margin: auto;
+    margin-bottom: 60px;
+    margin-top: 24px;
+}
+
+.imple_item_list{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 42px;
+    margin-bottom: 60px;
+}
+.imple_item{
+    text-align: center;
+}
+.imple_item_title{
+    margin-top: 32px;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
