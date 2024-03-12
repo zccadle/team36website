@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../css/page/Evaluation.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="../js/jquery-3.6.0.min.js"></script>
+	<script src="../js/common.js"></script>
 </head>
 <body>
 
@@ -24,89 +26,80 @@
 
                 <!--Header Links-->
                 <div class="header_right">
-                    
-                    <a href="./index.html" class="header_link">
-                        <p class="before_open_menu">Home</p>
-                        <div class="header_underbox">
-                            <p>ABSTRACT</p>
-                            <p>FEATURES</p>
-                            <p>VIDEO</p>
-                            <p>OUR TEAM</p>
-                            <p>PROJECT TIMELINE</p>
-                        </div>
-                    </a>
-
-                    <a href="./Requirements.html" class="header_link">
-                        <p class="before_open_menu">Requirements</p>
-                        <div class="header_underbox">
-                            <p>PROJECT BACKGROUND</p>
-                            <p>CLIENT REQUIREMENTS</p>
-                            <p>PROJECT GOAL</p>
-                            <p>PERSONAS AND USE CASES</p>
-                            <p>USER INTERVIEW</p>
-                            <p>MOSCOW LIST</p>
-                        </div>
-                    </a>
-                    <a href="./HCI.html" class="header_link">
-                        <p class="before_open_menu">HCI</p>
-                        <div class="header_underbox">
-                            <p>SKETCHES</p>
-                            <p>PROTOTYPE</p>
-                            <p>EVALUATION</p>
-                        </div>
-                    </a>
-                    <a href="./Research.html" class="header_link">
-                        <p class="before_open_menu">Research</p>
-                        <div class="header_underbox">
-                            <p>PROJECT RESEARCH</p>
-                            <p>TECHNOLOGY RESEARCH</p>
-                            <p>TECHNICAL DECISIONS</p>
-                            <p>REFERENCES</p>
-                        </div>
-                    </a>
-                    <a href="./SystemDesign.html" class="header_link">
-                        <p class="before_open_menu">System Design</p>
-                        <div class="header_underbox">
-                            <p>SYSTEM ARCHITECTURE</p>
-                            <p>SEQUENCE DIAGRAM</p>
-                            <p>FLOW DIAGRAM</p>
-                        </div>
-                    </a>
-                    <a href="./Implementation.html" class="header_link">
-                        <p class="before_open_menu">Implementation</p>
-                        <div class="header_underbox">
-                            <p>IMPLEMENTATION 1</p>
-                            <p>IMPLEMENTATION 2</p>
-                        </div>
-                    </a>
-                    <a href="./Testing.html" class="header_link">
-                        <p class="before_open_menu">Testing</p>
-                        <div class="header_underbox">
-                            <p>TESTING STRATEGY</p>
-                            <p>UNIT & INTEGRATION TESTING</p>
-                            <p>PERFORMANCE TESTING</p>
-                            <p>USER ACCEPTANCE TESTING</p>
-                            <p>CONCLUSION</p>
-                        </div>
-                    </a>
-                    <a href="./Evaluation.html" class="header_link">
-                        <p class="before_open_menu">Evaluation</p>
-                        <div class="header_underbox">
-                            <p>MOSCOW EVALUATION</p>
-                            <p>BUG LIST</p>
-                            <p>CRITICAL EVALUATION</p>
-                            <p>INDIVIDUAL CONTRIBUTION</p>
-                            <p>FUTURE WORK</p>
-                        </div>
-                    </a>
-                    <a href="./Appendix.html" class="header_link">
-                        <p class="before_open_menu">Appendix</p>
-                        <div class="header_underbox">
-                            <p>LINKS</p>
-                            <p>Monthly Videos</p>
-                        </div>
-                    </a>
-                </div>
+					<ul id="gnb">
+						<li><a href="./index.html">Home</a>
+							<ul>
+								<li><a href="./index.html?target=section01" data-target="section01">Abstract</a></li>
+								<li><a href="./index.html?target=section02" data-target="section02">Features</a></li>
+								<li><a href="./index.html?target=section03" data-target="section03">Video</a></li>
+								<li><a href="./index.html?target=section04" data-target="section04">Our Team</a></li>
+								<li><a href="./index.html?target=section05" data-target="section05">Project Timeline</a></li>
+							</ul>
+						</li>
+						<li><a href="./Requirements.html">Requirements</a>
+							<ul>
+								<li><a href="./Requirements.html?target=section01" data-target="section01">Project Background</a></li>
+								<li><a href="./Requirements.html?target=section02" data-target="section02">Client Requirements</a></li>
+								<li><a href="./Requirements.html?target=section03" data-target="section03">Project Goal</a></li>
+								<li><a href="./Requirements.html?target=section04" data-target="section04">Personas and Use Cases</a></li>
+								<li><a href="./Requirements.html?target=section05" data-target="section05">User Interview</a></li>
+								<li><a href="./Requirements.html?target=section06" data-target="section06">MoSCoW List</a></li>
+							</ul>
+						</li>
+						<li><a href="./HCI.html">HCI</a>
+							<ul>
+								<li><a href="./HCI.html?target=section01" data-target="section01">Sketches</a></li>
+								<li><a href="./HCI.html?target=section02" data-target="section02">Prototype</a></li>
+								<li><a href="./HCI.html?target=section03" data-target="section03">Evaluation</a></li>
+							</ul>
+						</li>
+						<li><a href="./Research.html">Research</a>
+							<ul>
+								<li><a href="./Research.html?target=section01" data-target="section01">Project Research</a></li>
+								<li><a href="./Research.html?target=section02" data-target="section02">Technology Reserch</a></li>
+								<li><a href="./Research.html?target=section03" data-target="section03">Technology Decisions</a></li>
+								<li><a href="./Research.html?target=section04" data-target="section04">References</a></li>
+							</ul>
+						</li>
+						<li><a href="./SystemDesign.html">System Design</a>
+							<ul>
+								<li><a href="./SystemDesign.html?target=section01" data-target="section01">System Architecture</a></li>
+								<li><a href="./SystemDesign.html?target=section02" data-target="section02">Sequence Diagram</a></li>
+								<li><a href="./SystemDesign.html?target=section03" data-target="section03">Flow Diagram</a></li>
+							</ul>
+						</li>
+						<li><a href="./Implementation.html">Implementation</a>
+							<ul>
+								<li><a href="./Implementation.html?target=section01" data-target="section01">Implementation 1</a></li>
+								<li><a href="./Implementation.html?target=section02" data-target="section02">Implementation 2</a></li>
+							</ul>
+						</li>
+						<li><a href="./Testing.html">Testing</a>
+							<ul>
+								<li><a href="./Testing.html?target=section01" data-target="section01">Testing Strategy</a></li>
+								<li><a href="./Testing.html?target=section02" data-target="section02">Unit &amp; Integration Testing</a></li>
+								<li><a href="./Testing.html?target=section03" data-target="section03">Performance Testing</a></li>
+								<li><a href="./Testing.html?target=section04" data-target="section04">User Acceptance Testing</a></li>
+								<li><a href="./Testing.html?target=section05" data-target="section05">Conclusion</a></li>
+							</ul>
+						</li>
+						<li><a href="./Evaluation.html">Evaluation</a>
+							<ul>
+								<li><a href="./Evaluation.html?target=section01" data-target="section01">MoSCoW Evaluation</a></li>
+								<li><a href="./Evaluation.html?target=section02" data-target="section02">Bug List</a></li>
+								<li><a href="./Evaluation.html?target=section03" data-target="section03">Critical Evaluation</a></li>
+								<li><a href="./Evaluation.html?target=section04" data-target="section04">Individual Contribution</a></li>
+								<li><a href="./Evaluation.html?target=section05" data-target="section05">Future Work</a></li>
+							</ul>
+						</li>
+						<li><a href="./Appendix.html">Appendix</a>
+							<ul>
+								<li><a href="./Appendix.html?target=section01" data-target="section01">Links</a></li>
+								<li><a href="./Appendix.html?target=section02" data-target="section02">Monthly Videos</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
             </div>
         </div>
     </header>
@@ -114,7 +107,11 @@
 
 
 
-
+<script>
+$(document).ready(function(){
+	gnbMenu(7,0); //Location of Current Page
+});
+</script>
 
 
     <!--Main Content Area-->
@@ -123,8 +120,8 @@
             <section class="section" id="top_label">
                 <div class="wrap">
                     <div class="inner">
-                        <div class="top_label_title" data-aos="fade-up" data-aos-duration="1500">EVALUATION</div>
-                        <div class="top_label_subtitle" data-aos="fade-up" data-aos-duration="1500">EXPLANATION</div>
+                        <div class="top_label_title" data-aos="fade-up" data-aos-duration="1500">Evaluation</div>
+                        <div class="top_label_subtitle" data-aos="fade-up" data-aos-duration="1500">Explanation</div>
                     </div>
                 </div>
             </section>
@@ -134,7 +131,7 @@
                 <div class="wrap">
                     <div class="inner">
 
-                        <div class="page_title" data-aos="fade-up" data-aos-duration="1500">MOSCOW EVALUATION</div>
+                        <div class="page_title" id="section01" data-aos="fade-up" data-aos-duration="1500">MoSCoW Evaluation</div>
                         <div class="eval_table" data-aos="fade-up" data-aos-duration="1500">
                             <div class="eval_table_1_header">
                                 <div class="eval_table_1_header_cell eval_table_1_header_cell_lg">Task</div>
@@ -179,7 +176,7 @@
 
 
 
-                        <div class="page_title" data-aos="fade-up" data-aos-duration="1500">BUG LIST</div>
+                        <div class="page_title" id="section02" data-aos="fade-up" data-aos-duration="1500">Bug List</div>
                             
                         <div class="eval_table_2" data-aos="fade-up" data-aos-duration="1500">
                             <div class="eval_table_2_head">
@@ -222,7 +219,7 @@
                         </div>
 
 
-                        <div class="page_title" data-aos="fade-up" data-aos-duration="1500">CRITICAL EVALUATION</div>
+                        <div class="page_title" id="section03" data-aos="fade-up" data-aos-duration="1500">Critical Evaluation</div>
                         <div class="page_semi_title" data-aos="fade-up" data-aos-duration="1500">Evaluation 1</div>
                         <div class="page_subtitle" data-aos="fade-up" data-aos-duration="1500">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus assumenda temporibus nemo nulla veniam commodi officiis eaque velit illum sequi! Aspernatur pariatur necessitatibus reiciendis repellendus soluta id fuga ut repudiandae.</div>
                         
@@ -239,7 +236,7 @@
                         <div class="page_subtitle" data-aos="fade-up" data-aos-duration="1500">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus assumenda temporibus nemo nulla veniam commodi officiis eaque velit illum sequi! Aspernatur pariatur necessitatibus reiciendis repellendus soluta id fuga ut repudiandae.</div>
 
 
-                        <div class="page_title" data-aos="fade-up" data-aos-duration="1500">INDIVIDUAL CONTRIBUTION</div>
+                        <div class="page_title" id="section04" data-aos="fade-up" data-aos-duration="1500">Individual Contribution</div>
 
 <div class="eval_table_2" data-aos="fade-up" data-aos-duration="1500">
                             <div class="eval_table_2_head">
@@ -283,7 +280,7 @@
 
 
 
-                        <div class="page_title" data-aos="fade-up" data-aos-duration="1500">FUTURE WORK</div>
+                        <div class="page_title" id="section05" data-aos="fade-up" data-aos-duration="1500">Future Work</div>
                         <div class="page_subtitle" data-aos="fade-up" data-aos-duration="1500">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet ullam ab dignissimos perferendis laborum minus beatae eligendi quisquam reprehenderit pariatur ea quidem veritatis optio eum, saepe inventore! Maiores, debitis quisquam?</div>
 
                     </div>
