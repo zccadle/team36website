@@ -1,4 +1,23 @@
 $(document).ready(function(){
+	$("#gnb").clone().appendTo(".mgnb").attr("id", "m_nav");
+	// MOBILE NAVIGATION
+	$("#m_nav > li > a").click(function(e){
+		if($(this).parent().hasClass("has_sub")) {
+			e.preventDefault();
+		}
+		if(!$(this).hasClass("open")) {
+			// hide any open menus and remove all other classes
+			$("#m_nav li > ul").slideUp();
+			$("#m_nav li a").removeClass("open");
+			// open our new menu and add the open class
+			$(this).next("ul").slideDown();
+			$(this).addClass("open");
+		}else if($(this).hasClass("open")) {
+			$(this).removeClass("open");
+			$(this).next("ul").slideUp();
+		}
+	});
+
 	$("#gnb > li > ul > li > a").click(function(event){
 		var target = $(this.hash);
 		$('html, body').stop().animate({
@@ -13,20 +32,15 @@ $(document).ready(function(){
 		});
 	});
 
-	const paths = location.pathname.split('/');
-	const lastUri = paths[paths.length - 1];
-	const aList = document.querySelector(`a[href*="${lastUri}"]`).nextElementSibling.querySelectorAll('a');
-	aList.forEach(e => {
-		e.setAttribute('href', `#${e.dataset.target}`);
-	});
-
-	const target = new URLSearchParams(location.search).get('target');
-	if (target) {
-		const a = Array.from(aList).find(item => item.dataset.target === target);
-		history.replaceState({}, '', location.pathname);
-		a.click();
-	}
+	// setTimeout (temporarily used for loading)
+	setTimeout(removeLoader, 1000);
 });
+
+// loading
+function removeLoader(){
+    $('.mask').fadeOut(500);
+	$('body').addClass('load_end');
+}
 
 // Top Navigation Bar
 function gnbMenu(depth1,depth2){
@@ -49,11 +63,22 @@ function gnbMenu(depth1,depth2){
 		$('#gnb > li:eq('+depth1+') ul li:eq('+depth2+') > a').addClass("on");
 	}
 }
+// When clicked on all menus (MOBILE)
+$(window).on("load", function(){
+	// When clicked on all menus (MOBILE)
+	$("#spinner-mb").click(function(){
+		$(this).toggleClass('on');
+		$(".togglemenu").toggleClass('on');
+		$(".mgnb").toggleClass('mb_menu_top');
+		$(".gnb_overlay").toggleClass('on');
+		$('body').toggleClass("mobile_menu_visible");
+	});
+});
 
 /* Menu Bar FIXED */
 if ($(window).width() > 0) {
 	$(window).on("scroll",function(ev){
-		if($(window).scrollTop() > 80 ) { /* Add fixed class if scroll out of range */
+		if($(window).scrollTop() > 80 ) { /* Add fixed class when out of range */
 			$('header').addClass('fixed');
 		}
 		else{

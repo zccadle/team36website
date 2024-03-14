@@ -1,18 +1,19 @@
 .page_full_img{
-    width: 840px;
+    width: 100%;
+	max-width:840px;
     display: block;
-    height: 320px;
+    /* height: 320px; */
     margin: auto;
     margin-top: 24px;
 }
-#testing_section{
+/* #testing_section{
     padding-top: 120px;
     padding-bottom: 120px;
     background-color: var(--toss-bg);
-}
+} */
 
 .moscow_textbox{
-    width: 840px;
+    max-width: 840px;
     margin: auto;
     height: 50px;
     overflow: hidden;
@@ -56,26 +57,28 @@
 .moscow_table, .moscow_table_2, .moscow_table_head_3{
     margin-top: 24px;
     width: 100%;
+	word-break:break-word;
 }
 .moscow_table_head{
     background-color: #ccc;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
 }
 .moscow_table_line{
     background-color: var(--white);
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 .moscow_table_cell{
-    padding-top: 12px;
-    padding-bottom: 12px;
+	padding:12px 4px;
     border: 1px solid var(--black);
     width: calc(100% / 3);
+	display:flex;
+	align-items:center;
     box-sizing: border-box;
 }
+.moscow_table_head .moscow_table_cell {justify-content:center; text-align:center;}
 .moscow_table_cell_sm{
     width: 20%;
 }

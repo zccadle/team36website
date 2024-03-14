@@ -1,8 +1,8 @@
-#rq_page_section{
+/* #rq_page_section{
     background-color: var(--toss-bg);
     padding-top: 120px;
     padding-bottom: 120px;
-}
+} */
 .personas_label_box, .userInt_label_box{
     display: flex;
     align-items: center;
@@ -14,7 +14,7 @@
     cursor: pointer;
     background-color: transparent;
     color: var(--red);
-    font-size: 20px;
+    font-size: 1.25rem;
     border-radius: 8px;
     border: 1px solid var(--red);
 }
@@ -36,11 +36,12 @@
 }
 .personas_textBox{
     display: none;
-    width: 640px;
+    max-width: 640px;
     margin: auto;
     margin-top: 42px;
     align-items: start;
     justify-content: space-between;
+	flex-wrap:wrap;
 }
 .personas_textBox_left > img{
     margin-bottom: 12px;
@@ -49,7 +50,8 @@
     margin-bottom: 12px;
 }
 .personas_textBox > div{
-    width: 300px;
+	flex:1;
+    max-width: 300px;
     padding: 12px;
     text-align: center;
 }
@@ -67,7 +69,7 @@
 }
 
 .userInt_textBox{
-    width: 640px;
+    max-width: 640px;
     margin: auto;
     display: none;
     margin-top: 42px;
@@ -75,17 +77,17 @@
 
 .q{
     text-decoration: underline;
-    font-size: 20px;
+    font-size: 1.25rem;
     margin-bottom: 12px;
 }
 .a{
-    font-size: 20px;
+    font-size: 1.25rem;
     margin-bottom: 12px;
 }
 
 
 .moscow_textbox{
-    width: 640px;
+    max-width: 640px;
     margin: auto;
     height: 50px;
     overflow: hidden;

@@ -1,11 +1,12 @@
 /*section 1*/
 #home_section_1{
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: var(--blue);
 }
 #home_section_1 .inner{
     display: flex;
+	flex-wrap:wrap;
     justify-content: space-between;
     align-items: center;
     height: 100vh;
@@ -32,38 +33,28 @@
 }
 
 
-.page_title{
-    font-size: 60px;
-    text-align: center;
-    margin-bottom: 32px;
-    padding-top: 120px;
-    color: var(--dark);
-    font-weight: bold;
-}
-
-.page_subtitle{
-    font-size: 22px;
-    text-align: align;
-    color: var(--dark);
-}
-
-
 .section_2_costList{
     display: flex;
+	flex-wrap:wrap;
     justify-content: space-between;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 3.75rem;
 }
 .section_2_costItem{
     width: calc((100%)/3 - 32px);
     height: 300px;
     text-align: center;
-    line-height: 300px;
+    /* line-height: 300px; */
     font-size: 42px;
     font-weight: bold;
     background-color: var(--white);
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0,.1);
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	padding:15px;
+	box-sizing:border-box;
 }
 
 
@@ -73,16 +64,17 @@
 .section_2_features_item{
     width: calc((100%)/3 - 32px);
     min-height: 300px;
-    height: auto;    
+    height: auto;
+	padding:24px 0;    
     text-align: center;
     background-color: var(--blue);
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0,.1);
+	box-sizing:border-box;
 }
 .section_2_features_item_num{
-    font-size: 32px;
+    font-size: 2rem;
     color: var(--white);
-    padding-top: 24px;
     padding-bottom: 16px;
 }
 .section_2_features_item_title{
@@ -93,10 +85,9 @@
 }
 .section_2_features_item_text{
     width: 90%;
-    word-break: break-all;
+    word-break: normal;
     margin: auto;
-    font-size: 18px;
-    text-align: center;
+    font-size: 1.125rem;
     color: var(--white);
 }
 
@@ -125,7 +116,7 @@
     margin-top: 24px;
 }
 .section_2_ourteam_name{
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: bold;
     margin-top: 16px;
     margin-bottom: 4px;
@@ -133,8 +124,13 @@
     text-align: center;
 }
 .section_2_ourteam_subname{
-    font-size : 20px;
+    font-size : 1.25rem;
     font-weight: bold;
+    color: var(--white);
+}
+.section_2_ourteam_roles{
+    font-size : 1.00rem;
+    font-weight: normal;
     color: var(--white);
 }
 .section_2_ourteam_link{
@@ -145,7 +141,7 @@
     line-height: 50px;
     margin: 4px;
     font-size: 20px;
-    color: var(--black) !important;
+    color: var(--red) !important;
     margin-top: 20px;
     transition: all .4s ease-in-out;
     border-radius: 100px;
@@ -165,11 +161,5 @@
 .section_2_timeline_img{
     margin: auto;
     display: block;
-    margin-top: 24px;
-}
-
-.section_footer_img{
-    width: 50px;
-    height: 50px;
     margin-top: 24px;
 }
