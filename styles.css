@@ -1,0 +1,21 @@
+/* Navbar styling */
+.navbar {
+    background-color: #f8d7da; /* Light red background color */
+}
+/* Active button styling */
+.nav-item .nav-link.active {
+    /* Highlight the active button */
+    background-color: #dc3545; /* Red color for highlighting */
+    color: #fff; /* White text color */
+    font-weight: bold; /* Bold font for better visibility */
+}
+
+/* Underline effect for active button */
+.nav-item .nav-link.active {
+    text-decoration: underline; /* Underline the active button */
+}
+
+.increased-size {
+    width: 150%;
+    height: auto;
+}
