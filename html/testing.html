@@ -12,7 +12,65 @@
 <body>
 <!-- Header Placeholder -->
 <div id="header-placeholder"></div>
+<section class="container my-5 mx-auto">
+    <h1 class="text-center mb-4">Testing</h1>
+    <h2 class="text-center mb-3">Testing Strategy</h2>
+    <p>In addition to our manual testing efforts, we leveraged GitHub as a version control system to maintain a robust and reliable codebase throughout the development process. By utilizing Git's version control capabilities, we ensured that our project remained meticulously organized and easily accessible to all team members, facilitating seamless collaboration and code sharing.<p>
 
+    <p>One of the key advantages of employing GitHub was the ability to implement version control best practices, including branching and merging strategies, which enabled us to work on new features and bug fixes in isolation without impacting the stability of the main codebase. This approach provided a safety net, allowing us to experiment with new ideas and functionalities while preserving the integrity of the project.</p>
+
+    <p>Moreover, GitHub served as a crucial mechanism for ensuring code quality and stability through its pull request and code review features. Before merging any changes into the main branch, all code modifications underwent rigorous peer review, wherein team members scrutinized the proposed changes, identified potential issues or improvements, and provided constructive feedback. This collaborative review process helped maintain code consistency, adherence to coding standards, and overall project standards.</p>
+
+    <p>Additionally, GitHub's version control capabilities empowered us to implement an effective rollback strategy, ensuring that we could revert to previous versions of the codebase in the event of unexpected issues or regressions. By committing changes incrementally and maintaining clear commit messages, we established a granular history of code modifications, facilitating precise pinpointing of specific changes and simplifying the rollback process when necessary.</p>
+
+    <p>Overall, GitHub played a pivotal role in our development workflow, providing us with the tools and infrastructure needed to maintain code quality, facilitate collaboration, and ensure project stability. Through meticulous version control practices and robust code management strategies, we were able to safeguard the integrity of our data visualization project for the Red Cross' GO Dashboard initiative while fostering a collaborative and efficient development environment.</p>
+
+    <h2 class="text-center mb-3">Compatibility Testing</h2>
+    <p><em>Browser Compatibility Testing:</em></p>
+    <ul>
+        <li><strong>Purpose</strong>: Browser compatibility testing is essential to ensure that our data visualization dashboard functions consistently across different web browsers, providing a seamless user experience to all users.</li>
+        <li><strong>Test Tool</strong>: We used a combination of multiple browsers and responsive design mode on each browser to conduct this test.</li>
+        <li><strong>Test Method</strong>: We manually accessed the data visualization dashboard using various web browsers including Google Chrome, Mozilla Firefox, Safari, Microsoft Edge, and others. We examined the layout, functionality, and performance of the dashboard in each browser environment.</li>
+        <li><strong>Results</strong>: The dashboard rendered correctly in modern web browsers. We took note of any issues that came up during testing, and fixed them afterward.</li>
+        <li><strong>Analysis</strong>: By identifying browser-specific issues, we were able to address them through code adjustments or alternative solutions, ensuring broad browser compatibility for our application.</li>
+    </ul>
+    <p><em>Operating System Compatibility Testing:</em></p>
+    <ul>
+        <li><strong>Purpose</strong>: Operating system compatibility testing is crucial to verify that our data visualization dashboard works seamlessly across various operating systems, ensuring accessibility to users regardless of their device preferences.</li>
+        <li><strong>Test Tool</strong>: We conducted manual testing using different devices with varying operating systems, including Windows, macOS, Linux, iOS, and Android.</li>
+        <li><strong>Test Method</strong>: We accessed the dashboard from devices running different operating systems and evaluated its functionality, performance, and integration with the underlying OS components.</li>
+        <li><strong>Results</strong>: The dashboard performed consistently across different operating systems, with no significant issues encountered. We ensured that features such as installation, execution, and system integration were compatible with each OS environment.</li>
+        <li><strong>Analysis</strong>: The successful compatibility across multiple operating systems demonstrates the robustness and versatility of our application, enabling users to access the dashboard from their preferred devices without encountering compatibility issues.</li>
+    </ul>
+    <h2 class="text-center mb-3">Responsive Design Testing</h2>
+    <p><em>Viewport Testing</em>:</p>
+    <ul>
+        <li><strong>Purpose:</strong> This test ensured that the dashboard layout adjusts correctly to different viewport sizes, maintaining readability and usability across various devices.</li>
+        <li><strong>Test Tool:</strong> We utilized browser developer tools such as Chrome DevTools or Firefox DevTools to simulate different viewport sizes and resolutions.</li>
+        <li><strong>Test Method:</strong> By resizing the browser window or using built-in viewport emulation features in developer tools, we observed how the dashboard layout responds to changes in viewport size.</li>
+        <li><strong>Results:</strong> The dashboard content rearranges itself dynamically to fit the viewport size, with no overlapping elements or content cutoff.</li>
+        <li><strong>Analysis:</strong> Successful viewport testing confirms that the dashboard is responsive and adaptive, providing users with a consistent experience regardless of the device or screen size. Any issues identified during testing need to be addressed to ensure optimal responsiveness.</li>
+    </ul>
+
+    <p><em>Orientation Testing</em>:</p>
+    <ul>
+        <li><strong>Purpose:</strong> This test evaluates how the dashboard layout adapts to changes in device orientation, ensuring consistency and usability across both portrait and landscape modes.</li>
+        <li><strong>Test Tool:</strong> Similar to viewport testing, we used browser developer tools to simulate changes in device orientation.</li>
+        <li><strong>Test Method:</strong> By rotating the device and using emulator tools in browser developer tools, we observed how the dashboard layout adjusts between portrait and landscape modes.</li>
+        <li><strong>Results:</strong> The dashboard smoothly transitioned between portrait and landscape orientations, with content reflowing and adjusting accordingly.</li>
+        <li><strong>Analysis:</strong> Successful orientation testing confirms that the dashboard maintains its integrity and usability regardless of the device orientation.</li>
+    </ul>
+
+    <p><em>Performance Testing</em>:</p>
+    <ul>
+        <li><strong>Purpose:</strong> Performance testing evaluates the responsiveness of the dashboard under various network conditions and device capabilities, ensuring optimal load times and interaction responsiveness.</li>
+        <li><strong>Test Tool:</strong> Performance testing tools such as Lighthouse and browser developer tools' performance auditing features.</li>
+        <li><strong>Test Method:</strong> We measured key performance metrics such as page load times, rendering speed, and resource utilization under different network speeds and device specifications.</li>
+        <li><strong>Results:</strong> The dashboard loads quickly except for the Heatmap, display content smoothly, and responds promptly to user interactions across different scenarios.</li>
+        <li><strong>Analysis:</strong> Analyzing performance test results helped us identify areas for optimization like duplicate code to enhance the dashboard's overall performance and user experience.</li>
+    </ul>
+
+</section>
 
 <div id="footer-placeholder"></div>
 <!-- Header Script -->
