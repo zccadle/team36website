@@ -14,7 +14,7 @@ document.getElementById('header-placeholder').innerHTML = `
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link ${window.location.pathname.includes('index.html') ? 'active' : ''}" href="./../html/index.html">Home</a>
+                    <a class="nav-link ${window.location.pathname.includes('home.html') ? 'active' : ''}" href="../html/home.html">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link ${window.location.pathname.includes('requirements.html') ? 'active' : ''}" href="./../html/requirements.html">Requirements</a>

@@ -14,7 +14,7 @@ document.getElementById('footer-placeholder').innerHTML = `
     <div class="col mb-3">
       <h5>Site Navigation</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="./../html/index.html" class="nav-link p-0 text-muted">Home</a></li>
+        <li class="nav-item mb-2"><a href="../html/home.html" class="nav-link p-0 text-muted">Home</a></li>
         <li class="nav-item mb-2"><a href="./../html/requirements.html" class="nav-link p-0 text-muted">Requirements</a></li>
         <li class="nav-item mb-2"><a href="./../html/research.html" class="nav-link p-0 text-muted">Research</a></li>
         <li class="nav-item mb-2"><a href="./../html/ui_design.html" class="nav-link p-0 text-muted">UI Design</a></li>
