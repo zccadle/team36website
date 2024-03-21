@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization on IFRC GO</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./../styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<!-- Header Placeholder -->
+<div id="header-placeholder"></div>
+
+<!-- Project Background  -->
+<section class="container my-5 mx-auto">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="./../images/ifrcgo.png" class="img-fluid" alt="IFRC GO Dashboard">
+        </div>
+        <div class="col-md-6">
+            <h2>Project Background and Partner Introduction</h2>
+            <p>IFRC GO serves as a central hub for accessing critical information related to emergency operations, regional insights, and country-level data. While the platform currently uses Microsoft's Power BI software for data visualization, it lacks flexibility and depth for comprehensive analysis.</p>
+            <p>The Red Cross, a globally recognized humanitarian organization, closely monitors IFRC GO dashboards to streamline emergency response efforts. Through IFRC GO, the Red Cross leverages innovative data visualization tools to enhance decision-making processes. Together, they ensure efficient coordination of resources, improve situational awareness, and ultimately, save lives in times of crisis.</p>
+
+        </div>
+    </div>
+</section>
+
+<!-- Project Goals -->
+<section class="container my-5 mx-auto">
+    <h2 class="text-center">Project Goals</h2>
+    <p>The project endeavors to enrich IFRC GO by integrating dynamic data visualization tools like D3.js, Chart.js, and ESRI, facilitating more sophisticated and tailored data presentations aligned with IFRC's unique requirements.</p>
+    <p>Anticipated outcomes include a curated assortment of visualization options based on GO API data and existing BI dashboards, alongside comprehensive documentation enabling stakeholders to replicate and leverage these enhanced visualization techniques.</p>
+    <p>By empowering IFRC stakeholders with advanced data visualization capabilities, the initiative aspires to foster deeper insights and catalyze positive impact in humanitarian endeavors, ultimately aiding in more effective decision-making and resource allocation during crises.</p>
+</section>
+
+<!-- Requirement Gathering Section -->
+<section class="container my-5 mx-auto">
+    <h2 class="text-center mb-3">Requirement Gathering and User Interviews</h2>
+    <p>Requirement gathering and user interviews played a pivotal role in shaping the direction of our project. In our initial meeting with key stakeholders during the first week, we delved into understanding the challenges users faced with the existing dashboard system and the limitations of available graph types. Following this, we conducted in-depth interviews with stakeholders responsible for generating graphs, ensuring representation from both technical and non-technical backgrounds. These interviews, conducted in a semi-structured format, provided valuable insights into current pain points and areas for improvement. Excerpts from these interviews are given below to demonstrate specific user needs and preferences, guiding us towards developing solutions that catered to the diverse requirements of our target audience.</p>
+    <h3 class="mb-3">Interview 1 (Non-Technical User)</h3>
+    <p>
+        <strong>Q. What challenges do you encounter when creating charts using PowerBI?</strong><br>
+        A. The PowerBI interface presents difficulties for novice users like myself in developing web-responsive and mobile-friendly charts. Additionally, I find the API documentation to be somewhat unclear. It would be beneficial to have pre-designed templates available in the user library, eliminating the need for extensive coding to enhance chart aesthetics and enabling me to focus solely on data importation.
+    </p>
+
+    <p>
+        <strong>Q. How do you perceive the addition of comprehensive documentation on creating basic charts to the user library?</strong><br>
+        A. Integrating detailed documentation into the user library would greatly assist beginners like me by alleviating concerns about underlying infrastructure. This would allow me to concentrate solely on chart creation, improving efficiency and overall user experience.
+    </p>
+
+    <p>
+        <strong>Q. Are there any specific chart types or functionalities you find particularly challenging to implement in PowerBI?</strong><br>
+        A. Yes, I often struggle with creating interactive features and incorporating custom visualizations into my charts. Enhanced guidance or tutorials on these aspects would be greatly appreciated.
+    </p>
+
+    <p>
+        <strong>Q. How do you believe the availability of community-driven resources could enhance your experience with PowerBI?</strong><br>
+        A. Access to community-driven resources such as user-contributed templates, tutorials, and peer support forums would significantly enrich my PowerBI experience. Collaborative platforms foster knowledge sharing and provide alternative perspectives, offering invaluable insights and solutions to common challenges.
+    </p>
+
+    <p>
+        <strong>Q. How would you feel about transitioning to JavaScript frameworks like D3.js and ESRI, which are known to be easier to understand and provide greater flexibility compared to PowerBI?</strong><br>
+        A. I would welcome the transition to JavaScript frameworks like D3.js and ESRI, as they are renowned for their simplicity and flexibility. Moving to these frameworks could potentially streamline the chart creation process, empower users with greater control over visualization design, and facilitate seamless integration with other data-driven applications.
+    </p>
+    <h3 class="mb-3">Interview 2 (Technical User)</h3>
+    <p>
+        <strong>Q. What issues do you face when trying to build charts using PowerBI?</strong><br>
+        A. As an advanced user, while PowerBI provides robust functionality, I encounter challenges in achieving highly customized and complex visualizations. The platform's user interface, while suitable for business users, may lack the depth and flexibility required for more intricate data representations. Additionally, the API documentation could be clearer, hindering efficient utilization of advanced features.
+    </p>
+
+
+    <p>
+        <strong>Q. How do you feel about the learning curve associated with transitioning to other visualization tools like D3.js or ESRI from PowerBI?</strong><br>
+        A. As a technical user, I am confident in my ability to adapt to new technologies. While there may be a learning curve initially, I see it as an opportunity to broaden my skill set and unlock new capabilities in data visualization.
+    </p>
+
+    <p>
+        <strong>Q. What specific features or functionalities do you wish PowerBI offered but currently lacks?</strong><br>
+        A. As a technical user, I often find myself wanting more flexibility and customization options, particularly in terms of advanced data manipulation and integration with external libraries or frameworks.
+    </p>
+
+    <p>
+        <strong>Q. How do you envision incorporating more interactive and dynamic elements into your visualizations, and do you see PowerBI as sufficient for fulfilling those needs?</strong><br>
+        A. As a technical user, I am interested in exploring JavaScript frameworks like D3.js and ESRI for their ability to create highly interactive and dynamic visualizations. While PowerBI offers some interactive features, I believe these frameworks could provide greater flexibility and control over visualization design.
+    </p>
+
+    <p>
+        <strong>Q. What role do you see advanced data visualization tools playing in driving strategic decision-making within your organization?</strong><br>
+        A. As a technical user, I believe advanced data visualization tools serve as critical assets in informing strategic decision-making processes within organizations. By providing rich insights and actionable intelligence, these tools empower stakeholders to make informed decisions, optimize operations, and drive business growth.
+    </p>
+</section>
+
+<section class="container my-5 mx-auto text-center">
+    <h2 class="text-center">Key Insights Gained From Requirement Gathering</h2>
+    <p>Through the requirement gathering process, key insights were gleaned from both non-technical and advanced PowerBI users. Non-technical users expressed challenges with PowerBI's interface in creating responsive and aesthetically pleasing charts, alongside a desire for clearer API documentation and readily available templates. Conversely, advanced users highlighted limitations in PowerBI's customization options and documentation clarity, indicating a need for enhanced flexibility and advanced features. Both user groups expressed openness to exploring alternative visualization tools like D3.js and ESRI for greater control and versatility. Additionally, advanced users emphasized the importance of professional development and the strategic role of advanced data visualization tools in driving informed decision-making within organizations. These insights underscore the significance of integrating responsive and user-friendly visualization tools into IFRC GO, catering to diverse user needs and facilitating more effective data-driven decision-making in humanitarian efforts.</p>
+
+</section>
+
+<!-- Personas Section -->
+<section class="container my-5 mx-auto text-center">
+    <h2>Personas</h2>
+    <p>Typical users of our project include:</p>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <img src="./../images/Persona1.png" class="img-fluid" alt="Persona 1">
+        </div>
+        <div class="col-md-6 mx-auto">
+            <img src="./../images/Persona2.png" class="img-fluid" alt="Persona 1">
+        </div>
+    </div>
+</section>
+
+<!-- Use Cases Section -->
+<section class="container my-5 mx-auto">
+    <h3>List of Use Cases for Chart Templates</h3>
+    <h4>1. Hierarchical Layouts (D3.js)</h4>
+    <p>For the IFRC GO Dashboard, hierarchical layouts can visually represent the organizational structure of ongoing projects within IFRC. This feature enables users to explore how projects are grouped by sector, region, or country, facilitating an understanding of hierarchical relationships and dependencies.</p>
+
+    <h4>2. Force-Directed Graphs (D3.js)</h4>
+    <p>Force-directed graphs provide a visual representation of the network of relationships between different entities involved in emergency operations, such as stakeholders, partners, and affected communities. This functionality highlights connections and dependencies, supporting collaboration and coordination efforts within IFRC's initiatives.</p>
+
+    <h4>3. Chord Diagrams (D3.js)</h4>
+    <p>Chord diagrams serve to illustrate the flow of resources, including funding, supplies, and personnel, between different sectors, countries, or regions. By visually mapping resource allocation patterns, IFRC stakeholders gain valuable insights into resource distribution dynamics, aiding in strategic decision-making processes.</p>
+
+    <h4>4. Heatmaps (ESRI)</h4>
+    <p>Heatmaps are instrumental in mapping the geographical distribution of events, such as natural disasters or disease outbreaks, and project activities. By visualizing activity levels across regions, IFRC can identify areas with high levels of activity or areas requiring additional support or intervention, guiding targeted humanitarian efforts effectively.</p>
+
+    <h4>5. Streamgraphs (D3.js)</h4>
+    <p>Streamgraphs track changes in the distribution of resources or activities over time within different sectors or regions. This functionality aids IFRC in understanding evolving trends and priorities within its operations, facilitating informed decision-making and resource allocation strategies.</p>
+
+    <h4>6. Doughnut Chart (Chart.js)</h4>
+    <p>Doughnut charts break down the allocation of resources, including funding and personnel, across different types of appeals, such as Disaster Response and Emergency Preparedness. This feature assists IFRC in budget planning and resource allocation decisions, ensuring efficient utilization of available resources across various initiatives.</p>
+
+    <h4>7. Bar Charts (D3.js)</h4>
+    <p>Bar charts created using D3.js offer a versatile visualization option for IFRC GO Dashboard. These charts can be utilized to represent various data metrics such as project progress, funding allocation, and resource distribution, enabling stakeholders to gain valuable insights and make informed decisions.</p>
+
+    <h4>8. Line Charts (D3.js)</h4>
+    <p>Line charts generated with D3.js provide IFRC with a dynamic visualization tool for tracking trends and changes over time. These charts are ideal for monitoring project performance, assessing the impact of interventions, and identifying emerging patterns or challenges.</p>
+
+    <h4>9. Bubble Charts (D3.js)</h4>
+    <p>Bubble charts created using D3.js facilitate the comparison of multiple variables simultaneously within IFRC GO Dashboard. These charts enable stakeholders to visualize relationships between data points, identify outliers, and uncover insights that may not be apparent in traditional chart formats.</p>
+</section>
+
+<!-- MoSCoW Requirement List Section -->
+<section class="container my-5 mx-auto text-center">
+    <h2>MoSCoW Requirement List</h2>
+    <h3>Functional Requirements</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Requirement</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Must Have</td>
+            <td>Bar Chart Template uses IFRC GO API Data</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Line Chart Template uses IFRC GO API Data</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Bubble Chart Template uses IFRC GO API Data</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Each Chart/Graph is generated using D3.js, Chart.js, or ESRI</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>All charts/graphs are responsive on mobile and desktop devices</td>
+        </tr>
+        <tr>
+            <td>Should Have</td>
+            <td>Doughnut Chart Template uses IFRC GO API Data</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Heat Map Template uses IFRC GO API Data</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>A dashboard which features all graphs/charts on one page</td>
+        </tr>
+        <tr>
+            <td>Could Have</td>
+            <td>Hierarchical Layout Chart Template uses IFRC GO API Data</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Hierarchical Layout Chart Template can responsively load on mobile and desktop devices</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Hierarchical Layout Chart is interactive</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Force-Directed Graph Template uses IFRC GO API Data</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Force-Directed Graph Template can responsively load on mobile and desktop devices</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Force-Directed Graph is interactive</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>All graphs have zooming capabilities</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>All graphs have panning capabilities</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Graphs/Charts use vibrant colours to engage users</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<section class="container my-5 mx-auto text-center">
+    <h3>Non-Functional Requirements</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Requirement</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Must Have</td>
+            <td>Compatibility: The dashboard and its components should be compatible with a wide range of web browsers and devices to ensure accessibility for all users.</td>
+        </tr>
+        <tr>
+            <td>Should Have</td>
+            <td>Usability: The dashboard interface should be intuitive and user-friendly, with clear navigation and instructions to facilitate ease of use for stakeholders.</td>
+        </tr>
+        <tr>
+            <td>Could Have</td>
+            <td>Performance: All charts/graphs should load efficiently and render smoothly when using IFRC GO API data to ensure optimal user experience.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Scalability: The dashboard infrastructure should be scalable to accommodate potential future growth in data volume and user traffic.</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+<div id="footer-placeholder"></div>
+<!-- Header Script -->
+<script src="./../js/header.js"></script>
+<!-- Footer Script -->
+<script src="./../js/footer.js"></script>
+</body>
+</html>
