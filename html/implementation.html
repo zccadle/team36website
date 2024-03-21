@@ -7,13 +7,458 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./../styles.css" rel="stylesheet">
+    <link href="./../prism.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./../js/prism.js"></script>
 </head>
 <body>
 <!-- Header Placeholder -->
+<!--React, d3, esri and arcgis, react-resizable, -->
 <div id="header-placeholder"></div>
+<section class="container my-5 mx-auto">
+    <h1 class="text-center mb-4">Implementation</h1>
+    <h2 class="text-center mb-3">Dependencies And Tools</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-center">React</h3>
+            <p>In this project, React is a pivotal dependency and tool, facilitating the creation of dynamic and user-friendly data visualization interfaces. Its component-based architecture streamlines UI development by enabling the creation of reusable components. React's virtual DOM reconciliation ensures optimal rendering performance, crucial for handling large datasets. Additionally, React's ecosystem provides access to essential libraries like React Router and Redux, further enhancing the application's capabilities. React's useState and useEffect are used extensively in this project to ensure that the resizing of the graph happens as fast and smooth as possible.</p>
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center">D3.js</h3>
+            <p>D3.js serves as a crucial tool in the project, enabling us to craft dynamic and interactive data visualizations. Its extensive functionalities, including data binding, DOM manipulation, and SVG rendering, facilitate the creation of compelling charts. Leveraging D3.js, the project can generate a diverse range of visualizations, such as hierarchical layouts, force-directed graphs, chord diagrams, and more, ensuring versatility and depth in data exploration. D3's zoom package is indispensable, making it easy for any user to add zooming and panning functionality to their graphs. </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-center">ESRI and Arcgis</h3>
+            <p>The ESRI loader and ArcGIS integration play a crucial role in facilitating the visualization of geographic data, including the creation of interactive heatmaps. By seamlessly incorporating ArcGIS services, the project enables users to generate heatmaps based on spatial data, offering insights into spatial patterns and distributions. This functionality enhances the project's ability to analyze and interpret data in the context of geographical locations, providing valuable insights for decision-making and spatial analysis tasks. Overall, the integration of ESRI loader and ArcGIS, particularly in generating heatmaps, significantly enhances the project's capabilities for geospatial data visualization and analysis.</p>
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center">React-Resizable</h3>
+            <p>React-resizable is a vital tool employed within the project to ensure the responsiveness and adaptability of the React application. By integrating react-resizable, the project enables dynamic resizing of components, ensuring optimal display across various screen sizes and devices. This functionality is particularly crucial for maintaining a seamless user experience, as it automatically adjusts the layout and dimensions of visualizations when the window is resized or when accessed on mobile devices with smaller screens. Thus, react-resizable plays a pivotal role in enhancing the project's usability and accessibility, allowing users to interact with the data visualizations effectively across different platforms and devices.</p>
+        </div>
+    </div>
+</section>
+    <section class="container my-5 mx-auto">
+    <h3 class="text-center mb-4">Implementation Details</h3>
+    <h4 class="text-center mb-4">Backend</h4>
+    <h5 class="text-center mb-3">Walkthrough of BarChartComponent</h5>
+    <p>This detailed explanation provides comprehensive instructions for understanding and utilizing the Bar Chart Component in React with D3.js. The Bar Chart Component is just one of many backend components in this project. It's important to note that all other components within this project are implemented with the same underlying structure. However, individual differences between the graphs have been thoroughly commented on to facilitate easy modifications by users with limited technical knowledge. This approach ensures that users can adapt the code to suit their specific requirements with minimal effort.</p>
+    <h5>Component Structure</h5>
 
+    <p>The <code>BarChartComponent</code> consists of the following key parts:</p>
 
+    <ul>
+        <li><strong>State Variables:</strong> <code>barChartData</code> stores the processed data, and <code>svgRef</code> and <code>gRef</code> are references to SVG and group elements respectively.</li>
+        <li><strong>Data Fetching:</strong> Data is fetched from the specified API endpoint using fetch API and processed to group by region and sector.</li>
+        <li><strong>Rendering:</strong> The bar chart is rendered within the useEffect hook based on the provided dimensions and data.</li>
+        <li><strong>Event Handling:</strong> The component handles mouseover and mouseout events to display a tooltip on the chart.</li>
+    </ul>
+
+    <h5>Configuration</h5>
+
+    <p>The <code>BarChartComponent</code> component fetches data from an API endpoint, groups it by region and sector, and then renders a bar chart based on the data. You may need to modify the data processing logic depending on your API structure.</p>
+
+    <h5>Component Props</h5>
+
+    <p><code>dimensions:</code> An object containing the width and height of the chart. Example: <code>{ width: 800, height: 400 }</code>.</p>
+
+    <h5>Detailed Explanation</h5>
+    <pre><code class="language-js">// React component for rendering a bar chart
+import React, { useState, useEffect, useRef } from 'react';
+import * as d3 from 'd3'; // Import D3 library
+import { zoom } from 'd3-zoom'; // Import zoom functionality from D3
+</code></pre>
+    <p>The code imports necessary modules including React, D3, and D3 zoom.</p>
+
+    <pre><code class="language-js">const BarChartComponent = ({ dimensions }) => {
+    // State variables for bar chart data and SVG reference
+    const [barChartData, setBarChartData] = useState(null);
+    const svgRef = useRef(null);
+    const gRef = useRef(null);
+</code></pre>
+    <p>The BarChartComponent is a functional component that takes dimensions as a prop and initializes state variables for chart data and SVG references.</p>
+
+    <pre><code class="language-js">useEffect(() => {
+    fetch('https://goadmin.ifrc.org/api/v2/appeal/')
+        .then(response => response.json())
+        .then(data => {
+            // Group data by region and sector, and calculate total amount funded
+            const groupedData = data.results.reduce((acc, curr) => {
+                const regionName = curr.region.region_name;
+                const sector = curr.sector;
+                const amountFunded = curr.amount_funded;
+
+                if (!acc[regionName]) {
+                    acc[regionName] = {};
+                }
+
+                if (!acc[regionName][sector]) {
+                    acc[regionName][sector] = 0;
+                }
+
+                acc[regionName][sector] += amountFunded;
+
+                return acc;
+            }, {});
+</code></pre>
+    <p>The component fetches data from the specified API endpoint and groups it by region and sector, calculating the total amount funded for each sector within each region.</p>
+
+    <pre><code class="language-js">            // Convert grouped data into format suitable for bar chart
+            const barChartData = Object.entries(groupedData).map(([region, sectors]) => ({
+                region: region,
+                sectors: Object.entries(sectors).map(([sector, amount]) => ({
+                    sector: sector,
+                    amount: amount
+                }))
+            }));
+
+            // Set bar chart data
+            setBarChartData(barChartData);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+}, []);
+</code></pre>
+    <p>The grouped data is then converted into a format suitable for rendering the bar chart, and the state variable barChartData is updated with this data.</p>
+
+    <pre><code class="language-js">useEffect(() => {
+    if (!dimensions.width || !dimensions.height || !barChartData) return;
+
+    // Define margins and dimensions for SVG and inner group element
+    const margin = { top: 50, right: 50, bottom: 50, left: 50 };
+    const svgWidth = dimensions.width - margin.left - margin.right;
+    const svgHeight = dimensions.height - margin.top - margin.bottom;
+</code></pre>
+    <p>Another useEffect hook is used to render and update the bar chart based on changes in dimensions or data.</p>
+
+    <pre><code class="language-js">    // Select SVG element and set its width and height
+    const svg = d3.select(svgRef.current)
+        .attr("width", dimensions.width) // Possible options: Any numeric value
+        .attr("height", dimensions.height); // Possible options: Any numeric value
+</code></pre>
+    <p>The SVG element is selected and its dimensions are set based on the provided dimensions prop.</p>
+
+    <pre><code class="language-js">    // Select or append group element for rendering chart
+    let g = d3.select(gRef.current);
+    if (g.empty()) {
+        g = svg.append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`); // Possible options: Translation values
+    } else {
+        g.selectAll("*").remove();
+    }
+</code></pre>
+    <p>The group element for rendering the chart is selected or appended to the SVG. If the group already exists, its contents are removed.</p>
+
+    <pre><code class="language-js">    // Define x and y scales
+    const x = d3.scaleBand()
+        .domain(barChartData.map(d => d.region))
+        .range([0, svgWidth])
+        .padding(0.1);
+</code></pre>
+    <p>The x-scale is defined using d3.scaleBand() to represent regions on the x-axis.</p>
+
+    <pre><code class="language-js">    const y = d3.scaleLinear()
+        .domain([0, d3.max(barChartData, d => d3.max(d.sectors, s => s.amount))])
+        .nice()
+        .range([svgHeight, 0]);
+</code></pre>
+    <p>The y-scale is defined using d3.scaleLinear() to represent the amount funded on the y-axis.</p>
+
+    <pre><code class="language-js">    // Define color scale
+    const color = d3.scaleOrdinal(d3.schemeCategory10);
+</code></pre>
+    <p>A color scale is defined using d3.scaleOrdinal() to assign colors to different sectors.</p>
+
+    <pre><code class="language-js">    // Render bars
+    g.selectAll("g")
+        .data(barChartData)
+        .join("g")
+        .attr("transform", d => `translate(${x(d.region)},0)`)
+        .selectAll("rect")
+        .data(d => d.sectors)
+        .join("rect")
+        .attr("x", d => x.bandwidth() / 2 - 10)
+        .attr("y", d => y(d.amount))
+        .attr("height", d => svgHeight - y(d.amount))
+        .attr("width", 50)
+        .attr("fill", d => color(d.sector))
+</code></pre>
+    <p>Bars are rendered using SVG rectangles, with attributes determined by the data and scales defined earlier.</p>
+
+    <pre><code class="language-js">        .on("mouseover", function (event, d) {
+            d3.select(this).attr('fill', 'orange');
+            tooltip.transition()
+                .duration(200)
+                .style("opacity", .9); // Possible options: Any value between 0 and 1
+            tooltip.html(`${d.amount}`)
+                .style("left", (event.pageX + 10) + "px") // Possible options: Any numeric value + "px"
+                .style("top", (event.pageY - 28) + "px"); // Possible options: Any numeric value + "px"
+        })
+        .on("mouseout", function (d) {
+            d3.select(this).attr('fill', d => color(d.sector));
+            tooltip.transition()
+                .duration(500)
+                .style("opacity", 0); // Possible options: Any value between 0 and 1
+        });
+</code></pre>
+    <p>Event handlers are attached to each bar for mouseover and mouseout events to display a tooltip showing the amount funded for that sector.</p>
+
+    <pre><code class="language-js">// Render x-axis
+        g.append("g")
+        .attr("transform", `translate(0,${svgHeight})`)
+        .call(d3.axisBottom(x).tickSize(6))
+        .selectAll("text")
+        .attr("y", 0) // Possible options: Any numeric value
+        .attr("x", 9) // Possible options: Any numeric value
+        .attr("dy", ".35em") // Possible options: Any string value
+        .attr("transform", "rotate(90)") // Possible options: Rotation angle
+        .style("text-anchor", "start") // Possible options: "start", "middle", "end"
+        .style("font-size", "14px"); // Possible options: Any valid CSS font size
+</code></pre>
+    <p>The x-axis is rendered using d3.axisBottom().</p>
+    <pre><code class="language-js">// Render y-axis and label
+g.append("g")
+    .call(d3.axisLeft(y).ticks(null, "s").tickSize(6))
+    .append("text")
+    .attr("x", -120) // Possible options: Any numeric value
+    .attr("y", 10) // Possible options: Any numeric value
+    .attr("dy", "0.71em") // Possible options: Any string value
+    .attr("fill", "#000") // Possible options: Any valid CSS color value
+    .attr("text-anchor", "start") // Possible options: "start", "middle", "end"
+    .style("font-size", "14px") // Possible options: Any valid CSS font size
+    .text("Amount Funded");
+</code></pre>
+    <p>The y-axis and its label are rendered.</p>
+    <pre><code class="language-js">// Create tooltip
+const tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0); // Possible options: Any value between 0 and 1
+</code></pre>
+    <p>A tooltip is created to display additional information on hover.</p>
+    <pre><code class="language-js">// Define zoom handler
+const zoomHandler = zoom()
+    .scaleExtent([0.5, 10])
+    .on("zoom", function(event) {
+        g.attr("transform", event.transform);
+    });
+</code></pre>
+    <p>A zoom handler is defined to enable zoom functionality on the chart.</p>
+    <pre><code class="language-js">// Apply zoom behavior to SVG
+svg.call(zoomHandler);
+</code></pre>
+    <p>The zoom behavior is applied to the SVG element.</p>
+    <pre><code class="language-js">}, [dimensions, barChartData]); // Dependencies for useEffect hook
+</code></pre>
+    <p>The useEffect hook dependencies ensure that the rendering logic is executed when the dimensions or data change.</p>
+    <pre><code class="language-js">// Return SVG element for rendering the bar chart
+        return &lt;svg ref={svgRef}>&lt;g ref={gRef}>&lt;/g>&lt;/svg>";}
+</code></pre>
+    <p>Finally, the component returns an SVG element containing the rendered bar chart.</p>
+</section>
+
+<section class="container my-5 mx-auto">
+    <h4 class="text-center mb-4">Frontend</h4>
+    <h5 class="text-center mb-3">Walkthrough of App.jsx</h5>
+    <p>In this section, we'll delve into the App.jsx file, the heart of our application. App.jsx serves as the main orchestrator, managing the rendering of different components based on user interactions. It maintains the application's state, dynamically rendering various graphs and charts, such as hierarchical layouts, force-directed graphs, and doughnut charts, based on user selections. We'll walk through the code step by step to understand how it achieves this functionality.</p>
+    <!-- Importing Dependencies -->
+    <h5>1. Importing Dependencies</h5>
+    <pre class="code language-js">
+        <code>
+            import React, { useState, useEffect } from 'react';
+            import './App.css';
+            import { ResizableBox } from 'react-resizable';
+            import Dashboard from './components/dashboard';
+            import HierarchicalLayoutComponent from './components/HierarchicalLayoutComponent';
+            import ForceDirectedGraphComponent from "./components/ForceDirectedGraphComponent";
+            import ChordDiagramComponent from "./components/ChordDiagramComponent";
+        </code>
+    </pre>
+    <p>React, useState, and useEffect are imported from the React library to create functional components and manage component state and side effects. ResizableBox is imported from the react-resizable library to create a resizable container for the graph component. Various chart components (HierarchicalLayoutComponent, ForceDirectedGraphComponent, etc.) are imported from their respective files to be rendered in the application.</p>
+    <!-- Functional Components -->
+    <h5>2. Functional Components</h5>
+    <div>
+        <h6>Footer Component:</h6>
+        <pre class="code language-js">
+            <code>
+                function Footer() {
+                    return (
+                        &lt;footer className="footer"&gt;
+                            &lt;div className="footer-content"&gt;
+                                &lt;p&gt;{new Date().getFullYear()} Chart Gallery made for IFRC Data Visualization&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/footer&gt;
+                    );
+                }
+            </code>
+        </pre>
+        <p>Footer is a functional component responsible for rendering the footer section of the application.</p>
+    </div>
+    <div>
+        <h6>App Component:</h6>
+        <pre class="code language-js">
+            <code>
+                function App() {
+                    // State variables and functions for managing component state
+                }
+            </code>
+        </pre>
+        <p>App is the main functional component responsible for rendering the entire application.</p>
+    </div>
+
+    <!-- State Management and Component Initialization -->
+    <h5>3. State Management and Component Initialization</h5>
+    <pre class="code language-js">
+        <code>
+            const [svgSize, setSvgSize] = useState({ width: window.innerWidth, height: window.innerHeight});
+            const [graphSize, setGraphSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+            const [activeComponent, setActiveComponent] = useState('dashboard');
+        </code>
+    </pre>
+    <p>useState hooks are used to manage component state. svgSize and graphSize store the dimensions of the SVG container and graph component respectively. activeComponent stores the currently active chart component to be rendered.</p>
+
+    <!-- Rendering Chart Components -->
+    <h5>4. Rendering Chart Components</h5>
+    <pre class="code language-js">
+        <code>
+            const renderGraphComponent = () =&gt; {
+                switch (activeComponent) {
+                    case 'hierarchical':
+                        return &lt;HierarchicalLayoutComponent dimensions={svgSize} /&gt;;
+                    case 'forceDirected':
+                        return &lt;ForceDirectedGraphComponent dimensions={svgSize} /&gt;;
+                    // Other cases for different chart components
+                    default:
+                        return null;
+                }
+            };
+        </code>
+    </pre>
+    <p>renderGraphComponent is a function that returns the JSX code for the currently active chart component based on the activeComponent state. A switch statement is used to determine which chart component to render based on the value of activeComponent.</p>
+    <!-- Event Handling and Effects -->
+    <h5>5. Event Handling and Effects</h5>
+    <pre class="code language-js">
+        <code>
+            useEffect(() =&gt; {
+                const handleResize = () =&gt; {
+                    setSvgSize({ width: window.innerWidth, height: window.innerHeight });
+                };
+
+                window.addEventListener('resize', handleResize);
+
+                return () =&gt; {
+                    window.removeEventListener('resize', handleResize);
+                };
+            }, []);
+        </code>
+    </pre>
+    <p>useEffect hook is used to handle side effects, such as adding and removing event listeners for window resize events. When the component mounts, an event listener is added to handle window resize events. The listener updates the svgSize state with the new dimensions of the SVG container.  The cleanup function returned by the useEffect hook removes the event listener when the component unmounts.</p>
+    <h5>6. Rendering SVG</h5>
+    <pre class="code language-js">
+    <code>
+        return (
+            &lt;div className="App"&gt;
+                {/*
+                    Inside the return statement, we're rendering the main container div with the class "App".
+                    This div wraps all the components rendered by the App component.
+                */}
+                &lt;Dashboard /&gt;
+                {/*
+                    The Dashboard component is being rendered inside the main container div.
+                    This component displays the main dashboard view.
+                */}
+                &lt;Footer /&gt;
+                {/*
+                    The Footer component is being rendered at the end of the main container div.
+                    It displays the footer section of the application.
+                */}
+            &lt;/div&gt;
+        );
+    </code>
+</pre>
+    <p>The return statement renders the JSX code for the entire application. Various chart components and buttons for switching between components are rendered dynamically based on the activeComponent state. The Footer component is also rendered at the bottom of the page.
+    <p>This breakdown explains how the App component works, including its state management, rendering logic, event handling, and effects.</p>
+
+</section>
+<section class="container my-5 mx-auto">
+    <h5 class="text-center mb-3">Walkthrough of Dashboard.jsx</h5>
+    <p>The Dashboard.jsx file serves as the dashboard component of our application. It's responsible for rendering various graphs and charts within resizable boxes, allowing users to visualize different datasets. Let's break down how this code works:</p>
+    <!-- Importing Dependencies -->
+    <h5>1. Importing Dependencies</h5>
+    <p>The Dashboard component imports necessary dependencies such as React, useState, useEffect, ResizableBox, and chart components from their respective files.</p>
+    <pre class="code language-js">
+        <code>
+            import React, { useState, useEffect } from 'react';
+            import { ResizableBox } from 'react-resizable';
+            import './../Dashboard.css';
+            import BubbleChartComponent from "./BubbleChartComponent";
+            import HierarchicalLayoutComponent from './HierarchicalLayoutComponent';
+            import ForceDirectedGraphComponent from "./ForceDirectedGraphComponent";
+            import ChordDiagramComponent from "./ChordDiagramComponent";
+            import StreamGraphComponent from "./StreamGraphComponent";
+            import DoughnutChartComponent from "./DoughnutChartComponent";
+            import HeatMapComponent from "./HeatmapComponent";
+            import BarChartComponent from "./BarChartComponent";
+            import LineChartComponent from "./LineChartComponent";
+        </code>
+    </pre>
+    <p>The import statements bring in necessary React components and stylesheets for rendering the dashboard.</p>
+
+    <!-- Functional Component Structure -->
+    <h5>2. Functional Component Structure</h5>
+    <p>The Dashboard component is defined as a functional component. It initializes state variables and handles the resizing of chart components.</p>
+    <pre class="code language-js">
+        <code>
+            function Dashboard() {
+                const [graphSize, setGraphSize] = useState({ width: 700, height: 800 });
+
+                // Handles resize event
+                const handleResize = (event, { size }) => {
+                    setGraphSize({ width: size.width, height: size.height });
+                };
+
+                useEffect(() => {
+                    // Handles window resize event
+                    const handleResize = () => {
+                        setGraphSize({ width: window.innerWidth / 3 - 100, height: window.innerHeight / 3 });
+                    };
+
+                    window.addEventListener('resize', handleResize);
+
+                    return () => {
+                        window.removeEventListener('resize', handleResize);
+                    };
+                }, []);
+
+                // Renders chart components within resizable boxes
+                return (
+                    // JSX code for rendering various chart components
+                );
+            }
+        </code>
+    </pre>
+    <p>The Dashboard component defines state variables to manage the size of chart components and useEffect hook to handle resizing logic.</p>
+
+    <!-- Rendering Chart Components -->
+    <h5>3. Rendering Chart Components</h5>
+    <p>The Dashboard component renders various chart components such as HierarchicalLayoutComponent, ForceDirectedGraphComponent, etc., within resizable boxes.</p>
+    <pre class="code language-js">
+        <code>
+            return (
+                &lt;div className="dashboard"&gt;
+                    &lt;div className="graph_with_title"&gt;
+                        &lt;p&gt;IFRC Appeals Arranged by Region, Country, and Appeal Type&lt;/p&gt;
+                        &lt;ResizableBox className="graph-container" width={graphSize.width} height={graphSize.height} onResize={handleResize}&gt;
+                            &lt;HierarchicalLayoutComponent dimensions={graphSize}&gt;&lt;/HierarchicalLayoutComponent&gt;
+                        &lt;/ResizableBox&gt;
+                    &lt;/div&gt;
+             //Other chart components
+                &lt;/div&gt;
+            );
+        </code>
+    </pre>
+    <p>Each chart component is wrapped inside a resizable box to allow users to adjust its dimensions.</p>
+    <p>This breakdown explains how the Dashboard component functions, encompassing its state management for chart dimensions, rendering logic for various chart components within resizable boxes, and event handling to accommodate resizing functionality.</p>
+</section>
 <div id="footer-placeholder"></div>
 <!-- Header Script -->
 <script src="./../js/header.js"></script>
