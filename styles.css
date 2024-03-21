@@ -1,31 +1,28 @@
-/* Navbar styling */
+
 .navbar {
-    background-color: #f8d7da; /* Light red background color */
+    background-color: #f8d7da;
 }
-/* Active button styling */
 .nav-item .nav-link.active {
-    /* Highlight the active button */
-    background-color: #dc3545; /* Red color for highlighting */
-    color: #fff; /* White text color */
-    font-weight: bold; /* Bold font for better visibility */
+    background-color: #dc3545;
+    color: #fff;
+    font-weight: bold;
 }
 
-/* Underline effect for active button */
 .nav-item .nav-link.active {
-    text-decoration: underline; /* Underline the active button */
+    text-decoration: underline;
 }
 
 .square-btn {
-    width: 200px; /* Adjust width as needed */
-    height: 200px; /* Maintain a square shape */
-    background-color: #ffffff; /* White background */
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
     text-align: center;
-    line-height: 100px; /* Center text vertically */
-    border: 1px solid #000000; /* Black border */
-    color: #000000; /* Black text color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    line-height: 100px;
+    border: 1px solid #000000;
+    color: #000000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .square-btn:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
