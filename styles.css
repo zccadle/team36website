@@ -15,3 +15,17 @@
     text-decoration: underline; /* Underline the active button */
 }
 
+.square-btn {
+    width: 200px; /* Adjust width as needed */
+    height: 200px; /* Maintain a square shape */
+    background-color: #ffffff; /* White background */
+    text-align: center;
+    line-height: 100px; /* Center text vertically */
+    border: 1px solid #000000; /* Black border */
+    color: #000000; /* Black text color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.square-btn:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
