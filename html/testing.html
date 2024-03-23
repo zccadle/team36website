@@ -7,116 +7,234 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./../styles.css" rel="stylesheet">
+	<link href="./../font.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 <!-- Header Placeholder -->
 <div id="header-placeholder"></div>
+
+<div class="page_title">
+	<h1>Testing</h1>
+</div>
+
 <section class="container my-5 mx-auto">
-    <h1 class="text-center mb-4">Testing</h1>
-    <h2 class="text-center mb-3">Testing Strategy</h2>
-    <p>In addition to our manual testing efforts, we leveraged GitHub as a version control system to maintain a robust and reliable codebase throughout the development process. By utilizing Git's version control capabilities, we ensured that our project remained meticulously organized and easily accessible to all team members, facilitating seamless collaboration and code sharing.<p>
+	<h2 class="text-center mb-3">Testing Strategy</h2>
+	<div class="contentwrap">
+		<p>In addition to our manual testing efforts, we leveraged GitHub as a version control system to maintain a robust and reliable codebase throughout the development process. By utilizing Git's version control capabilities, we ensured that our project remained meticulously organized and easily accessible to all team members, facilitating seamless collaboration and code sharing.<p>
 
-    <p>One of the key advantages of employing GitHub was the ability to implement version control best practices, including branching and merging strategies, which enabled us to work on new features and bug fixes in isolation without impacting the stability of the main codebase. This approach provided a safety net, allowing us to experiment with new ideas and functionalities while preserving the integrity of the project.</p>
+		<p>One of the key advantages of employing GitHub was the ability to implement version control best practices, including branching and merging strategies, which enabled us to work on new features and bug fixes in isolation without impacting the stability of the main codebase. This approach provided a safety net, allowing us to experiment with new ideas and functionalities while preserving the integrity of the project.</p>
+	
+		<p>Moreover, GitHub served as a crucial mechanism for ensuring code quality and stability through its pull request and code review features. Before merging any changes into the main branch, all code modifications underwent rigorous peer review, wherein team members scrutinized the proposed changes, identified potential issues or improvements, and provided constructive feedback. This collaborative review process helped maintain code consistency, adherence to coding standards, and overall project standards.</p>
+	
+		<p>Additionally, GitHub's version control capabilities empowered us to implement an effective rollback strategy, ensuring that we could revert to previous versions of the codebase in the event of unexpected issues or regressions. By committing changes incrementally and maintaining clear commit messages, we established a granular history of code modifications, facilitating precise pinpointing of specific changes and simplifying the rollback process when necessary.</p>
+	
+		<p>Overall, GitHub played a pivotal role in our development workflow, providing us with the tools and infrastructure needed to maintain code quality, facilitate collaboration, and ensure project stability. Through meticulous version control practices and robust code management strategies, we were able to safeguard the integrity of our data visualization project for the Red Cross' GO Dashboard initiative while fostering a collaborative and efficient development environment.</p>
+	</div>
+</section>
 
-    <p>Moreover, GitHub served as a crucial mechanism for ensuring code quality and stability through its pull request and code review features. Before merging any changes into the main branch, all code modifications underwent rigorous peer review, wherein team members scrutinized the proposed changes, identified potential issues or improvements, and provided constructive feedback. This collaborative review process helped maintain code consistency, adherence to coding standards, and overall project standards.</p>
+<section class="container my-5 mx-auto">
+	<h2 class="text-center mb-3">Compatibility Testing</h2>
+	<div class="contentwrap">
+		<h3 class="text-center">Browser Compatibility Testing:</h3>
+		<div class="togglelist ver2">
+			<div class="item">
+				<input type="checkbox" id="compatibility01" class="hidden"><label for="compatibility01">Purpose</label>
+				<div class="cont">Browser compatibility testing is essential to ensure that our data visualization dashboard functions consistently across different web browsers, providing a seamless user experience to all users.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="compatibility02" class="hidden"><label for="compatibility02">Test Tool</label>
+				<div class="cont">We used a combination of multiple browsers and responsive design mode on each browser to conduct this test.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="compatibility03" class="hidden"><label for="compatibility03">Test Method</label>
+				<div class="cont">We manually accessed the data visualization dashboard using various web browsers including Google Chrome, Mozilla Firefox, Safari, Microsoft Edge, and others. We examined the layout, functionality, and performance of the dashboard in each browser environment.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="compatibility04" class="hidden"><label for="compatibility04">Results</label>
+				<div class="cont">The dashboard rendered correctly in modern web browsers. We took note of any issues that came up during testing, and fixed them afterward.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="compatibility05" class="hidden"><label for="compatibility05">Analysis</label>
+				<div class="cont">By identifying browser-specific issues, we were able to address them through code adjustments or alternative solutions, ensuring broad browser compatibility for our application.</div>
+			</div>
+		</div>
+	</div>
+	<div class="contentwrap">
+		<h3 class="text-center">Operating System Compatibility Testing:</h3>
+		<div class="togglelist ver2">
+			<div class="item">
+				<input type="checkbox" id="operating01" class="hidden"><label for="operating01">Purpose</label>
+				<div class="cont">Operating system compatibility testing is crucial to verify that our data visualization dashboard works seamlessly across various operating systems, ensuring accessibility to users regardless of their device preferences.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="operating02" class="hidden"><label for="operating02">Test Tool</label>
+				<div class="cont">We conducted manual testing using different devices with varying operating systems, including Windows, macOS, Linux, iOS, and Android.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="operating03" class="hidden"><label for="operating03">Test Method</label>
+				<div class="cont">We accessed the dashboard from devices running different operating systems and evaluated its functionality, performance, and integration with the underlying OS components.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="operating04" class="hidden"><label for="operating04">Results</label>
+				<div class="cont">The dashboard performed consistently across different operating systems, with no significant issues encountered. We ensured that features such as installation, execution, and system integration were compatible with each OS environment.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="operating05" class="hidden"><label for="operating05">Analysis</label>
+				<div class="cont">The successful compatibility across multiple operating systems demonstrates the robustness and versatility of our application, enabling users to access the dashboard from their preferred devices without encountering compatibility issues.</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-    <p>Additionally, GitHub's version control capabilities empowered us to implement an effective rollback strategy, ensuring that we could revert to previous versions of the codebase in the event of unexpected issues or regressions. By committing changes incrementally and maintaining clear commit messages, we established a granular history of code modifications, facilitating precise pinpointing of specific changes and simplifying the rollback process when necessary.</p>
-
-    <p>Overall, GitHub played a pivotal role in our development workflow, providing us with the tools and infrastructure needed to maintain code quality, facilitate collaboration, and ensure project stability. Through meticulous version control practices and robust code management strategies, we were able to safeguard the integrity of our data visualization project for the Red Cross' GO Dashboard initiative while fostering a collaborative and efficient development environment.</p>
-
-    <h2 class="text-center mb-3">Compatibility Testing</h2>
-    <p><em>Browser Compatibility Testing:</em></p>
-    <ul>
-        <li><strong>Purpose</strong>: Browser compatibility testing is essential to ensure that our data visualization dashboard functions consistently across different web browsers, providing a seamless user experience to all users.</li>
-        <li><strong>Test Tool</strong>: We used a combination of multiple browsers and responsive design mode on each browser to conduct this test.</li>
-        <li><strong>Test Method</strong>: We manually accessed the data visualization dashboard using various web browsers including Google Chrome, Mozilla Firefox, Safari, Microsoft Edge, and others. We examined the layout, functionality, and performance of the dashboard in each browser environment.</li>
-        <li><strong>Results</strong>: The dashboard rendered correctly in modern web browsers. We took note of any issues that came up during testing, and fixed them afterward.</li>
-        <li><strong>Analysis</strong>: By identifying browser-specific issues, we were able to address them through code adjustments or alternative solutions, ensuring broad browser compatibility for our application.</li>
-    </ul>
-    <p><em>Operating System Compatibility Testing:</em></p>
-    <ul>
-        <li><strong>Purpose</strong>: Operating system compatibility testing is crucial to verify that our data visualization dashboard works seamlessly across various operating systems, ensuring accessibility to users regardless of their device preferences.</li>
-        <li><strong>Test Tool</strong>: We conducted manual testing using different devices with varying operating systems, including Windows, macOS, Linux, iOS, and Android.</li>
-        <li><strong>Test Method</strong>: We accessed the dashboard from devices running different operating systems and evaluated its functionality, performance, and integration with the underlying OS components.</li>
-        <li><strong>Results</strong>: The dashboard performed consistently across different operating systems, with no significant issues encountered. We ensured that features such as installation, execution, and system integration were compatible with each OS environment.</li>
-        <li><strong>Analysis</strong>: The successful compatibility across multiple operating systems demonstrates the robustness and versatility of our application, enabling users to access the dashboard from their preferred devices without encountering compatibility issues.</li>
-    </ul>
+<section class="container my-5 mx-auto">
     <h2 class="text-center mb-3">Responsive Design Testing</h2>
-    <p><em>Viewport Testing</em>:</p>
-    <ul>
-        <li><strong>Purpose:</strong> This test ensured that the dashboard layout adjusts correctly to different viewport sizes, maintaining readability and usability across various devices.</li>
-        <li><strong>Test Tool:</strong> We utilized browser developer tools such as Chrome DevTools or Firefox DevTools to simulate different viewport sizes and resolutions.</li>
-        <li><strong>Test Method:</strong> By resizing the browser window or using built-in viewport emulation features in developer tools, we observed how the dashboard layout responds to changes in viewport size.</li>
-        <li><strong>Results:</strong> The dashboard content rearranges itself dynamically to fit the viewport size, with no overlapping elements or content cutoff.</li>
-        <li><strong>Analysis:</strong> Successful viewport testing confirms that the dashboard is responsive and adaptive, providing users with a consistent experience regardless of the device or screen size. Any issues identified during testing need to be addressed to ensure optimal responsiveness.</li>
-    </ul>
-
-    <p><em>Orientation Testing</em>:</p>
-    <ul>
-        <li><strong>Purpose:</strong> This test evaluates how the dashboard layout adapts to changes in device orientation, ensuring consistency and usability across both portrait and landscape modes.</li>
-        <li><strong>Test Tool:</strong> Similar to viewport testing, we used browser developer tools to simulate changes in device orientation.</li>
-        <li><strong>Test Method:</strong> By rotating the device and using emulator tools in browser developer tools, we observed how the dashboard layout adjusts between portrait and landscape modes.</li>
-        <li><strong>Results:</strong> The dashboard smoothly transitioned between portrait and landscape orientations, with content reflowing and adjusting accordingly.</li>
-        <li><strong>Analysis:</strong> Successful orientation testing confirms that the dashboard maintains its integrity and usability regardless of the device orientation.</li>
-    </ul>
-
-    <p><em>Performance Testing</em>:</p>
-    <ul>
-        <li><strong>Purpose:</strong> Performance testing evaluates the responsiveness of the dashboard under various network conditions and device capabilities, ensuring optimal load times and interaction responsiveness.</li>
-        <li><strong>Test Tool:</strong> Performance testing tools such as Lighthouse and browser developer tools' performance auditing features.</li>
-        <li><strong>Test Method:</strong> We measured key performance metrics such as page load times, rendering speed, and resource utilization under different network speeds and device specifications.</li>
-        <li><strong>Results:</strong> The dashboard loads quickly except for the Heatmap, display content smoothly, and responds promptly to user interactions across different scenarios.</li>
-        <li><strong>Analysis:</strong> Analyzing performance test results helped us identify areas for optimization like duplicate code to enhance the dashboard's overall performance and user experience.</li>
-    </ul>
-
-    <h2 class="text-center mb-3">User Acceptance Testing</h2>
-    <h3>Testers</h3>
-    <p>
-        <strong>Tester 1:</strong> Marketing Manager of IFRC. Tester 1 is fond of using and browsing through IFRC GO, but has none to little experience with its technology.
-    </p>
-    <p>
-        <strong>Tester 2:</strong> Data Visualisation Specialist. High technological knowledge, and has experience navigating and editing IFRC GO on a daily basis.
-    </p>
-    <p>
-        <strong>Tester 3:</strong> Student. Adequate technological knowledge, but has no prior experience using IFRC GO. Depicts a future new employee for the IFRC.
-    </p>
-    <h3>Test Cases</h3>
-    <p>
-        <strong>Test Case 1:</strong> Users will navigate and interact through example chart templates and find a specific data point from each chart.
-    </p>
-    <p>
-        <strong>Test Case 2:</strong> Users will repeat the previous procedure, but on a mobile device.
-    </p>
-    <p>
-        <strong>Test Case 3:</strong> Users will edit the charts using randomly generated data and numbers.
-    </p>
-    <p>
-        <strong>Test Case 4:</strong>  Users will create a chart by linking a different dataset from the IFRC GO API.
-    </p>
-    <h3>Test Feedback</h3>
-    <img src="./../images/TesterFeedback.png" alt="Tester Feedback" class="rounded mx-auto d-block">
-    <h3>Client Feedback</h3>
-    <p>
-        We are pleased to say that this project has met our requirements, and the final work seems applicable to IFRC GO.
-    </p>
-    <h3>Conclusion</h3>
-    <p>
-        Our solution generally received positive feedback from all three types of testers.
-    </p>
-    <p>
-        <strong>Test Case 1</strong> was a fairly simple task that all testers could do within minutes.
-    </p>
-    <p>
-        <strong>Test Case 2</strong> generally received feedback that it was harder to do the same task on a mobile environment than on a PC setting. However, for testers that were used to using mobile-unfriendly Power BI, they seemed to enjoy interacting with our solution.
-    </p>
-    <p>
-        <strong>Test Case 3</strong> was a simple task that could be done in minutes when the user understood the guidelines and documentation. 
-    </p>
-    <p>
-        <strong>Test Case 4</strong> seemed to be the most challenging task for most users. Testers that were fond of editing charts and visualizing data on Power BI and other environments did not take long to adapt to our solution, and generally gave positive feedback that it seemed easier to do than other systems. For beginning users, browsing through the API and fetching its data onto the React Application seemed to be the hardest part for this test case.
-    </p>
-    
+	<div class="contentwrap">
+		<h3 class="text-center">Viewport Testing:</h3>
+		<div class="togglelist ver2">
+			<div class="item">
+				<input type="checkbox" id="viewport01" class="hidden"><label for="viewport01">Purpose</label>
+				<div class="cont">This test ensured that the dashboard layout adjusts correctly to different viewport sizes, maintaining readability and usability across various devices.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="viewport02" class="hidden"><label for="viewport02">Test Tool</label>
+				<div class="cont">We utilized browser developer tools such as Chrome DevTools or Firefox DevTools to simulate different viewport sizes and resolutions.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="viewport03" class="hidden"><label for="viewport03">Test Method</label>
+				<div class="cont">By resizing the browser window or using built-in viewport emulation features in developer tools, we observed how the dashboard layout responds to changes in viewport size.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="viewport04" class="hidden"><label for="viewport04">Results</label>
+				<div class="cont">The dashboard content rearranges itself dynamically to fit the viewport size, with no overlapping elements or content cutoff.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="viewport05" class="hidden"><label for="viewport05">Analysis</label>
+				<div class="cont">Successful viewport testing confirms that the dashboard is responsive and adaptive, providing users with a consistent experience regardless of the device or screen size. Any issues identified during testing need to be addressed to ensure optimal responsiveness.</div>
+			</div>
+		</div>
+	</div>
+	<div class="contentwrap">
+		<h3 class="text-center">Orientation Testing:</h3>
+		<div class="togglelist ver2">
+			<div class="item">
+				<input type="checkbox" id="orientation01" class="hidden"><label for="orientation01">Purpose</label>
+				<div class="cont">This test evaluates how the dashboard layout adapts to changes in device orientation, ensuring consistency and usability across both portrait and landscape modes.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="orientation02" class="hidden"><label for="orientation02">Test Tool</label>
+				<div class="cont">Similar to viewport testing, we used browser developer tools to simulate changes in device orientation.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="orientation03" class="hidden"><label for="orientation03">Test Method</label>
+				<div class="cont">By rotating the device and using emulator tools in browser developer tools, we observed how the dashboard layout adjusts between portrait and landscape modes.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="orientation04" class="hidden"><label for="orientation04">Results</label>
+				<div class="cont">The dashboard smoothly transitioned between portrait and landscape orientations, with content reflowing and adjusting accordingly.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="orientation05" class="hidden"><label for="orientation05">Analysis</label>
+				<div class="cont">Successful orientation testing confirms that the dashboard maintains its integrity and usability regardless of the device orientation.</div>
+			</div>
+		</div>
+	</div>
+	<div class="contentwrap">
+		<h3 class="text-center">Performance Testing:</h3>
+		<div class="togglelist ver2">
+			<div class="item">
+				<input type="checkbox" id="performance01" class="hidden"><label for="performance01">Purpose</label>
+				<div class="cont">Performance testing evaluates the responsiveness of the dashboard under various network conditions and device capabilities, ensuring optimal load times and interaction responsiveness.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="performance02" class="hidden"><label for="performance02">Test Tool</label>
+				<div class="cont">Performance testing tools such as Lighthouse and browser developer tools' performance auditing features.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="performance03" class="hidden"><label for="performance03">Test Method</label>
+				<div class="cont">We measured key performance metrics such as page load times, rendering speed, and resource utilization under different network speeds and device specifications.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="performance04" class="hidden"><label for="performance04">Results</label>
+				<div class="cont">The dashboard loads quickly except for the Heatmap, display content smoothly, and responds promptly to user interactions across different scenarios.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="performance05" class="hidden"><label for="performance05">Analysis</label>
+				<div class="cont">Analyzing performance test results helped us identify areas for optimization like duplicate code to enhance the dashboard's overall performance and user experience.</div>
+			</div>
+		</div>
+	</div> 
+</section>
+<section class="container my-5 mx-auto">
+	<h2 class="text-center mb-3">User Acceptance Testing</h2>
+	<div class="contentwrap">
+		<h3 class="text-center">Testers</h3>
+		<div class="togglelist ver2">
+			<div class="item">
+				<input type="checkbox" id="testers01" class="hidden"><label for="testers01">Tester 1</label>
+				<div class="cont">Marketing Manager of IFRC. Tester 1 is fond of using and browsing through IFRC GO, but has none to little experience with its technology.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="testers02" class="hidden"><label for="testers02">Tester 2</label>
+				<div class="cont">Data Visualisation Specialist. High technological knowledge, and has experience navigating and editing IFRC GO on a daily basis.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="testers03" class="hidden"><label for="testers03">Tester 3</label>
+				<div class="cont">Student. Adequate technological knowledge, but has no prior experience using IFRC GO. Depicts a future new employee for the IFRC.</div>
+			</div>
+		</div>
+	</div>
+	<div class="contentwrap">
+		<h3 class="text-center">Test Cases</h3>
+		<div class="togglelist ver2">
+			<div class="item">
+				<input type="checkbox" id="testcase01" class="hidden"><label for="testcase01">Test Case 1</label>
+				<div class="cont">Users will navigate and interact through example chart templates and find a specific data point from each chart.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="testcase02" class="hidden"><label for="testcase02">Test Case 2</label>
+				<div class="cont">Users will repeat the previous procedure, but on a mobile device.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="testcase03" class="hidden"><label for="testcase03">Test Case 3</label>
+				<div class="cont">Users will edit the charts using randomly generated data and numbers.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="testcase04" class="hidden"><label for="testcase04">Test Case 4</label>
+				<div class="cont">Users will create a chart by linking a different dataset from the IFRC GO API.</div>
+			</div>
+		</div>
+	</div>
+	<div class="contentwrap">
+		<h3 class="text-center">Test Feedback</h3>
+		<div class="text-center"><img src="./../images/TesterFeedback.png" alt="Tester Feedback" class="maximg"></div>
+	</div>
+	<div class="contentwrap text-center">
+		<h3>Client Feedback</h3>
+		<p>We are pleased to say that this project has met our requirements, and the final work seems applicable to IFRC GO.</p>
+	</div>
+	<div class="contentwrap text-center">
+		<h3>Conclusion</h3>
+		<p>Our solution generally received positive feedback from all three types of testers.</p>
+		<div class="togglelist ver2">
+			<div class="item">
+				<input type="checkbox" id="conclusion01" class="hidden"><label for="conclusion01">Test Case 1</label>
+				<div class="cont">was a fairly simple task that all testers could do within minutes.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="conclusion02" class="hidden"><label for="testcase02">Test Case 2</label>
+				<div class="cont">generally received feedback that it was harder to do the same task on a mobile environment than on a PC setting. However, for testers that were used to using mobile-unfriendly Power BI, they seemed to enjoy interacting with our solution.</div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="conclusion03" class="hidden"><label for="conclusion03">Test Case 3</label>
+				<div class="cont">was a simple task that could be done in minutes when the user understood the guidelines and documentation. </div>
+			</div>
+			<div class="item">
+				<input type="checkbox" id="conclusion04" class="hidden"><label for="conclusion04">Test Case 4</label>
+				<div class="cont">seemed to be the most challenging task for most users. Testers that were fond of editing charts and visualizing data on Power BI and other environments did not take long to adapt to our solution, and generally gave positive feedback that it seemed easier to do than other systems. For beginning users, browsing through the API and fetching its data onto the React Application seemed to be the hardest part for this test case.</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <div id="footer-placeholder"></div>

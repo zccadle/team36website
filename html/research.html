@@ -7,16 +7,22 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./../styles.css" rel="stylesheet">
+	<link href="./../font.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 <!-- Header Placeholder -->
 <div id="header-placeholder"></div>
 
+<div class="page_title">
+	<h1>Research</h1>
+</div>
+
 <!-- Related Projects Review Section -->
 <section class="container my-5 mx-auto">
     <h2 class="text-center">Related Project Review</h2>
-        <div class="row">
+	<div class="contentwrap">
+		<div class="row">
             <div class="col-md-6">
                 <img src="./../images/related_project.png" class="img-fluid">
             </div>
@@ -27,35 +33,38 @@
                 <p>In conducting a thorough analysis of the IFRC GO Emergency Operations Analysis Americas Region project, it becomes evident that addressing issues related to mobile responsiveness, interactivity, and tooltip functionality is crucial for optimizing the user experience. By prioritizing these aspects, the dashboard can better serve the diverse needs of its user base, fostering greater engagement, comprehension, and utility of the presented data.</p>
             </div>
         </div>
+	</div>
 </section>
 
 <!-- Technology Review Section -->
 <section class="container my-5 mx-auto">
     <h2>Technology Review</h2>
-    <p>For the technology review of the project, extensive research and evaluation were conducted to identify the most suitable solutions for chart generation, hosting, and compatibility across devices. Drawing from industry best practices and expert recommendations, the following technologies were selected based on their alignment with project requirements and proven effectiveness in similar contexts.</p>
-    <h3>Chart Generation:</h3>
-    <p>After reviewing various charting libraries and frameworks, d3.js emerged as the preferred choice due to its extensive capabilities in creating highly customizable and interactive data visualizations. This decision was supported by insights from reputable sources such as the official d3.js documentation <a href="https://d3js.org/">[1]</a> and comparative analyses by industry experts <a href="https://dataviz.shef.ac.uk/blog/27/01/2021/Interactive-Visualisations-In-R">[2]</a>.</p>
-    <h3>Hosting Platform:</h3>
-    <p>The decision to host the project on a React App was informed by comprehensive assessments of different frontend frameworks and their suitability for managing complex user interfaces. Research findings from sources like the State of JavaScript survey <a href="https://stateofjs.com/">[3]</a> and in-depth comparisons of frontend frameworks <a href="https://www.ijtsrd.com/papers/ijtsrd42490.pdf">[4]</a> highlighted React's robustness in handling dynamic data rendering and state management, making it an optimal choice for hosting the chart gallery project.</p>
-    <h3>Compatibility Across Devices:</h3>
-    <p>To ensure seamless rendering and responsiveness across modern desktop and mobile devices, React's reputation for efficient virtual DOM rendering and component-based architecture was corroborated by empirical studies <a href="https://www.ijtsrd.com/papers/ijtsrd42490.pdf">[4]</a>. Additionally, insights from usability testing and user feedback forums <a href="https://www.nngroup.com/articles/large-devices-important-tasks/">[5]</a> underscored the importance of device compatibility for enhancing user experience and engagement.</p>
-    <h3>Main Programming Language:</h3>
-    <p>JavaScript was chosen as the main programming language based on its ubiquitous presence in web development and extensive ecosystem of libraries and frameworks. Research insights from surveys like the Stack Overflow Developer Survey <a href="https://insights.stackoverflow.com/survey">[6]</a> and analysis of trending programming languages <a href="https://redmonk.com/sogrady/2023/05/16/language-rankings-1-23/">[7]</a> affirmed JavaScript's dominance in web development and its suitability for building dynamic and interactive web applications.</p>
-    <p>While alternative solutions and technologies were considered during the research process, they were ultimately not chosen for specific reasons outlined in the technology review. </p>
-    <h3>Technical Decision Summary</h3>
-    <p>In making technical decisions for the project, we opted for d3.js for chart generation due to its extensive capabilities and interactivity, while ESRI was chosen specifically for heatmaps, leveraging its specialized mapping functionalities. Additionally, chart.js was utilized for its simplicity and versatility in creating doughnut charts. Hosting on React was chosen for its robustness in managing dynamic interfaces, backed by research findings and comparisons. To ensure compatibility across devices, React's efficient rendering and component-based architecture were leveraged, supported by empirical studies and user feedback. JavaScript was the primary programming language due to its widespread adoption and extensive ecosystem. These decisions, informed by thorough research and analysis, aim to create a user-friendly chart gallery that meets project requirements and enhances the overall user experience.</p>
-    <footer>
-        <p>References:</p>
-        <ul>
-            <li>[1] Bostock, M. (2013). D3.js - Data-Driven Documents. <a href="https://d3js.org/">https://d3js.org/</a>.</li>
-            <li>[2] dataviz.shef.ac.uk. (n.d.). Interactive Visualisations in R | Blog. <a href="https://dataviz.shef.ac.uk/blog/27/01/2021/Interactive-Visualisations-In-R">https://dataviz.shef.ac.uk/blog/27/01/2021/Interactive-Visualisations-In-R</a>.</li>
-            <li>[3] stateofjs.com. (n.d.). The State of JavaScript Developer Survey. <a href="https://stateofjs.com/">https://stateofjs.com/</a>.</li>
-            <li>[4] Venkat, B., Indla, S., Puranik, Y. and Mca, P. (2021). Review on React JS of the Creative Commons Attribution License (CC BY 4.0). International Journal of Trend in Scientific Research and Development (IJTSRD) International Journal of Trend in Scientific Research and Development, (4), pp.1137–1139. <a href="https://www.ijtsrd.com/papers/ijtsrd42490.pdf">https://www.ijtsrd.com/papers/ijtsrd42490.pdf</a>.</li>
-            <li>[5] Experience, W.L. in R.-B.U. (n.d.). Large Devices Preferred for Important Tasks. Nielsen Norman Group. <a href="https://www.nngroup.com/articles/large-devices-important-tasks">https://www.nngroup.com/articles/large-devices-important-tasks</a>.</li>
-            <li>[6] insights.stackoverflow.com. (n.d.). Stack Overflow Insights - Developer Hiring, Marketing, and User Research. <a href="https://insights.stackoverflow.com/survey">https://insights.stackoverflow.com/survey</a>.</li>
-            <li>[7] O’Grady, S. (2023). The RedMonk Programming Language Rankings: January 2023. tecosystems. <a href="https://redmonk.com/sogrady/2023/05/16/language-rankings-1-23">https://redmonk.com/sogrady/2023/05/16/language-rankings-1-23</a>.</li>
-        </ul>
-    </footer>
+    <div class="contentwrap">
+		<p>For the technology review of the project, extensive research and evaluation were conducted to identify the most suitable solutions for chart generation, hosting, and compatibility across devices. Drawing from industry best practices and expert recommendations, the following technologies were selected based on their alignment with project requirements and proven effectiveness in similar contexts.</p>
+		<h4>Chart Generation:</h4>
+		<p>After reviewing various charting libraries and frameworks, d3.js emerged as the preferred choice due to its extensive capabilities in creating highly customizable and interactive data visualizations. This decision was supported by insights from reputable sources such as the official d3.js documentation <a href="https://d3js.org/">[1]</a> and comparative analyses by industry experts <a href="https://dataviz.shef.ac.uk/blog/27/01/2021/Interactive-Visualisations-In-R">[2]</a>.</p>
+		<h4>Hosting Platform:</h4>
+		<p>The decision to host the project on a React App was informed by comprehensive assessments of different frontend frameworks and their suitability for managing complex user interfaces. Research findings from sources like the State of JavaScript survey <a href="https://stateofjs.com/">[3]</a> and in-depth comparisons of frontend frameworks <a href="https://www.ijtsrd.com/papers/ijtsrd42490.pdf">[4]</a> highlighted React's robustness in handling dynamic data rendering and state management, making it an optimal choice for hosting the chart gallery project.</p>
+		<h4>Compatibility Across Devices:</h4>
+		<p>To ensure seamless rendering and responsiveness across modern desktop and mobile devices, React's reputation for efficient virtual DOM rendering and component-based architecture was corroborated by empirical studies <a href="https://www.ijtsrd.com/papers/ijtsrd42490.pdf">[4]</a>. Additionally, insights from usability testing and user feedback forums <a href="https://www.nngroup.com/articles/large-devices-important-tasks/">[5]</a> underscored the importance of device compatibility for enhancing user experience and engagement.</p>
+		<h4>Main Programming Language:</h4>
+		<p>JavaScript was chosen as the main programming language based on its ubiquitous presence in web development and extensive ecosystem of libraries and frameworks. Research insights from surveys like the Stack Overflow Developer Survey <a href="https://insights.stackoverflow.com/survey">[6]</a> and analysis of trending programming languages <a href="https://redmonk.com/sogrady/2023/05/16/language-rankings-1-23/">[7]</a> affirmed JavaScript's dominance in web development and its suitability for building dynamic and interactive web applications.</p>
+		<p>While alternative solutions and technologies were considered during the research process, they were ultimately not chosen for specific reasons outlined in the technology review. </p>
+		<h4>Technical Decision Summary</h4>
+		<p>In making technical decisions for the project, we opted for d3.js for chart generation due to its extensive capabilities and interactivity, while ESRI was chosen specifically for heatmaps, leveraging its specialized mapping functionalities. Additionally, chart.js was utilized for its simplicity and versatility in creating doughnut charts. Hosting on React was chosen for its robustness in managing dynamic interfaces, backed by research findings and comparisons. To ensure compatibility across devices, React's efficient rendering and component-based architecture were leveraged, supported by empirical studies and user feedback. JavaScript was the primary programming language due to its widespread adoption and extensive ecosystem. These decisions, informed by thorough research and analysis, aim to create a user-friendly chart gallery that meets project requirements and enhances the overall user experience.</p>
+		<footer>
+			<p>References:</p>
+			<ul class="numlist etc">
+				<li><i class="num">[1]</i> <div>Bostock, M. (2013). D3.js - Data-Driven Documents. <a href="https://d3js.org/">https://d3js.org/</a></div></li>
+				<li><i class="num">[2]</i> <div>dataviz.shef.ac.uk. (n.d.). Interactive Visualisations in R | Blog. <a href="https://dataviz.shef.ac.uk/blog/27/01/2021/Interactive-Visualisations-In-R">https://dataviz.shef.ac.uk/blog/27/01/2021/Interactive-Visualisations-In-R</a></div></li>
+				<li><i class="num">[3]</i> <div>stateofjs.com. (n.d.). The State of JavaScript Developer Survey. <a href="https://stateofjs.com/">https://stateofjs.com/</a></div></li>
+				<li><i class="num">[4]</i> <div>Venkat, B., Indla, S., Puranik, Y. and Mca, P. (2021). Review on React JS of the Creative Commons Attribution License (CC BY 4.0). International Journal of Trend in Scientific Research and Development (IJTSRD) International Journal of Trend in Scientific Research and Development, (4), pp.1137–1139. <a href="https://www.ijtsrd.com/papers/ijtsrd42490.pdf">https://www.ijtsrd.com/papers/ijtsrd42490.pdf</a></div></li>
+				<li><i class="num">[5]</i> <div>Experience, W.L. in R.-B.U. (n.d.). Large Devices Preferred for Important Tasks. Nielsen Norman Group. <a href="https://www.nngroup.com/articles/large-devices-important-tasks">https://www.nngroup.com/articles/large-devices-important-tasks</a></div></li>
+				<li><i class="num">[6]</i> <div>insights.stackoverflow.com. (n.d.). Stack Overflow Insights - Developer Hiring, Marketing, and User Research. <a href="https://insights.stackoverflow.com/survey">https://insights.stackoverflow.com/survey</a></div></li>
+				<li><i class="num">[7]</i> <div>O’Grady, S. (2023). The RedMonk Programming Language Rankings: January 2023. tecosystems. <a href="https://redmonk.com/sogrady/2023/05/16/language-rankings-1-23">https://redmonk.com/sogrady/2023/05/16/language-rankings-1-23</a></div></li>
+			</ul>
+		</footer>
+	</div>
 </section>
 
 <div id="footer-placeholder"></div>

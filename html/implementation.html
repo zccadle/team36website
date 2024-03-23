@@ -7,6 +7,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./../styles.css" rel="stylesheet">
+	<link href="./../font.css" rel="stylesheet">
     <link href="./../prism.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./../js/prism.js"></script>
@@ -15,34 +16,49 @@
 <!-- Header Placeholder -->
 <!--React, d3, esri and arcgis, react-resizable, -->
 <div id="header-placeholder"></div>
+
+<div class="page_title">
+	<h1>Implementation</h1>
+</div>
+
 <section class="container my-5 mx-auto">
-    <h1 class="text-center mb-4">Implementation</h1>
     <h2 class="text-center mb-3">Dependencies And Tools</h2>
-    <div class="row">
-        <div class="col-md-6">
-            <h3 class="text-center">React</h3>
-            <p>In this project, React is a pivotal dependency and tool, facilitating the creation of dynamic and user-friendly data visualization interfaces. Its component-based architecture streamlines UI development by enabling the creation of reusable components. React's virtual DOM reconciliation ensures optimal rendering performance, crucial for handling large datasets. Additionally, React's ecosystem provides access to essential libraries like React Router and Redux, further enhancing the application's capabilities. React's useState and useEffect are used extensively in this project to ensure that the resizing of the graph happens as fast and smooth as possible.</p>
-        </div>
-        <div class="col-md-6">
-            <h3 class="text-center">D3.js</h3>
-            <p>D3.js serves as a crucial tool in the project, enabling us to craft dynamic and interactive data visualizations. Its extensive functionalities, including data binding, DOM manipulation, and SVG rendering, facilitate the creation of compelling charts. Leveraging D3.js, the project can generate a diverse range of visualizations, such as hierarchical layouts, force-directed graphs, chord diagrams, and more, ensuring versatility and depth in data exploration. D3's zoom package is indispensable, making it easy for any user to add zooming and panning functionality to their graphs. </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <h3 class="text-center">ESRI and Arcgis</h3>
-            <p>The ESRI loader and ArcGIS integration play a crucial role in facilitating the visualization of geographic data, including the creation of interactive heatmaps. By seamlessly incorporating ArcGIS services, the project enables users to generate heatmaps based on spatial data, offering insights into spatial patterns and distributions. This functionality enhances the project's ability to analyze and interpret data in the context of geographical locations, providing valuable insights for decision-making and spatial analysis tasks. Overall, the integration of ESRI loader and ArcGIS, particularly in generating heatmaps, significantly enhances the project's capabilities for geospatial data visualization and analysis.</p>
-        </div>
-        <div class="col-md-6">
-            <h3 class="text-center">React-Resizable</h3>
-            <p>React-resizable is a vital tool employed within the project to ensure the responsiveness and adaptability of the React application. By integrating react-resizable, the project enables dynamic resizing of components, ensuring optimal display across various screen sizes and devices. This functionality is particularly crucial for maintaining a seamless user experience, as it automatically adjusts the layout and dimensions of visualizations when the window is resized or when accessed on mobile devices with smaller screens. Thus, react-resizable plays a pivotal role in enhancing the project's usability and accessibility, allowing users to interact with the data visualizations effectively across different platforms and devices.</p>
-        </div>
-    </div>
+     <!-- Images row -->
+	 <div class="tools">
+	 	<div class="item">
+			<div class="imgs"><img src="./../images/React-icon.png" class="img-fluid" alt="React Logo"></div>
+			<div class="cont">
+				<h3 class="text-center">React</h3>
+            	<p>In this project, React is a pivotal dependency and tool, facilitating the creation of dynamic and user-friendly data visualization interfaces. Its component-based architecture streamlines UI development by enabling the creation of reusable components. React's virtual DOM reconciliation ensures optimal rendering performance, crucial for handling large datasets. Additionally, React's ecosystem provides access to essential libraries like React Router and Redux, further enhancing the application's capabilities. React's useState and useEffect are used extensively in this project to ensure that the resizing of the graph happens as fast and smooth as possible.</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="imgs"><img src="./../images/d3.png" class="img-fluid" alt="D3.js Logo"></div>
+			<div class="cont">
+				<h3 class="text-center">D3.js</h3>
+            	<p>D3.js serves as a crucial tool in the project, enabling us to craft dynamic and interactive data visualizations. Its extensive functionalities, including data binding, DOM manipulation, and SVG rendering, facilitate the creation of compelling charts. Leveraging D3.js, the project can generate a diverse range of visualizations, such as hierarchical layouts, force-directed graphs, chord diagrams, and more, ensuring versatility and depth in data exploration. D3's zoom package is indispensable, making it easy for any user to add zooming and panning functionality to their graphs. </p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="imgs"><img src="./../images/Esri-Logo.png" class="img-fluid" alt="ESRI Logo"></div>
+			<div class="cont">
+				<h3 class="text-center">ESRI and Arcgis</h3>
+            	<p>The ESRI loader and ArcGIS integration play a crucial role in facilitating the visualization of geographic data, including the creation of interactive heatmaps. By seamlessly incorporating ArcGIS services, the project enables users to generate heatmaps based on spatial data, offering insights into spatial patterns and distributions. This functionality enhances the project's ability to analyze and interpret data in the context of geographical locations, providing valuable insights for decision-making and spatial analysis tasks. Overall, the integration of ESRI loader and ArcGIS, particularly in generating heatmaps, significantly enhances the project's capabilities for geospatial data visualization and analysis.</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="imgs"><img src="./../images/npm_logo.png" class="img-fluid" alt="React-Resizable Logo"></div>
+			<div class="cont">
+				<h3 class="text-center">React-Resizable</h3>
+            	<p>React-resizable is a vital tool employed within the project to ensure the responsiveness and adaptability of the React application. By integrating react-resizable, the project enables dynamic resizing of components, ensuring optimal display across various screen sizes and devices. This functionality is particularly crucial for maintaining a seamless user experience, as it automatically adjusts the layout and dimensions of visualizations when the window is resized or when accessed on mobile devices with smaller screens. Thus, react-resizable plays a pivotal role in enhancing the project's usability and accessibility, allowing users to interact with the data visualizations effectively across different platforms and devices.</p>
+			</div>
+		</div>
+	 </div>
 </section>
-    <section class="container my-5 mx-auto">
-    <h3 class="text-center mb-4">Implementation Details</h3>
-    <h4 class="text-center mb-4">Backend</h4>
-    <h5 class="text-center mb-3">Walkthrough of BarChartComponent</h5>
+<section class="container my-5 mx-auto impdetail">
+    <h2 class="text-center mb-4">Implementation Details</h2>
+    <h3 class="text-center mb-4">Backend</h3>
+    <h4 class="text-center mb-3">Walkthrough of BarChartComponent</h4>
     <p>This detailed explanation provides comprehensive instructions for understanding and utilizing the Bar Chart Component in React with D3.js. The Bar Chart Component is just one of many backend components in this project. It's important to note that all other components within this project are implemented with the same underlying structure. However, individual differences between the graphs have been thoroughly commented on to facilitate easy modifications by users with limited technical knowledge. This approach ensures that users can adapt the code to suit their specific requirements with minimal effort.</p>
     <h5>Component Structure</h5>
 
@@ -256,9 +272,9 @@ svg.call(zoomHandler);
     <p>Finally, the component returns an SVG element containing the rendered bar chart.</p>
 </section>
 
-<section class="container my-5 mx-auto">
-    <h4 class="text-center mb-4">Frontend</h4>
-    <h5 class="text-center mb-3">Walkthrough of App.jsx</h5>
+<section class="container my-5 mx-auto impdetail">
+    <h3 class="text-center mb-4">Frontend</h3>
+    <h4 class="text-center mb-3">Walkthrough of App.jsx</h4>
     <p>In this section, we'll delve into the App.jsx file, the heart of our application. App.jsx serves as the main orchestrator, managing the rendering of different components based on user interactions. It maintains the application's state, dynamically rendering various graphs and charts, such as hierarchical layouts, force-directed graphs, and doughnut charts, based on user selections. We'll walk through the code step by step to understand how it achieves this functionality.</p>
     <!-- Importing Dependencies -->
     <h5>1. Importing Dependencies</h5>
@@ -379,8 +395,8 @@ svg.call(zoomHandler);
     <p>This breakdown explains how the App component works, including its state management, rendering logic, event handling, and effects.</p>
 
 </section>
-<section class="container my-5 mx-auto">
-    <h5 class="text-center mb-3">Walkthrough of Dashboard.jsx</h5>
+<section class="container my-5 mx-auto impdetail">
+    <h4 class="text-center mb-3">Walkthrough of Dashboard.jsx</h4>
     <p>The Dashboard.jsx file serves as the dashboard component of our application. It's responsible for rendering various graphs and charts within resizable boxes, allowing users to visualize different datasets. Let's break down how this code works:</p>
     <!-- Importing Dependencies -->
     <h5>1. Importing Dependencies</h5>

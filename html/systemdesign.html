@@ -7,94 +7,119 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./../styles.css" rel="stylesheet">
+	<link href="./../font.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 <!-- Header Placeholder -->
 <div id="header-placeholder"></div>
 
+<div class="page_title">
+	<h1>System Design</h1>
+</div>
+
 <!-- System Design Section -->
 <section class="container my-5 mx-auto">
-    <h2 class="text-center mb-4">System Design</h2>
     <h3 class="text-center">System Architecture Diagram</h3>
     <img src="./../images/sys_design.jpg" alt="System Architecture Diagram" class="img-fluid">
-    <h3 class="text-center">Brief Description of Each Component</h3>
-    <ul>
-        <li>
-            <p>
-            <strong>Component Description: BarChartComponent</strong><br>
-            The BarChartComponent is a React functional component designed to render a bar chart using D3.js library. It fetches data from an API endpoint, processes it, and dynamically generates the bar chart based on the received data. The component utilizes state variables to manage the bar chart data and SVG references. It employs the useEffect hook to fetch and process data on component mount and to render and update the chart based on changes in dimensions or data. The rendered bar chart includes interactive features such as hover tooltips and zoom functionality, enhancing user engagement and exploration of the data. Overall, the BarChartComponent serves as a flexible and user-friendly tool for visualizing appeal data within the IFRC Chart Gallery Project.
-            </p>
-        </li>
-        <li>
-        <p>
-            <strong>Component Description: LineChartComponent</strong><br>
-            The LineChartComponent is a React functional component designed to render a line chart using D3.js library. It fetches data from an API endpoint, processes it to prepare the data for each region, and dynamically generates the line chart based on the received data. The component utilizes state variables to manage the line chart data and SVG references. It employs the useEffect hook to fetch and process data on component mount and to render and update the chart based on changes in dimensions or data. The rendered line chart includes interactive features such as zoom functionality and tooltips, enhancing user engagement and exploration of the data. Overall, the LineChartComponent serves as a flexible and user-friendly tool for visualizing appeal data within the IFRC Chart Gallery Project.
-        </p>
-        </li>
-        <li>
-        <p>
-            <strong>Component Description: BubbleChartComponent</strong><br>
-            The BubbleChartComponent is a React functional component designed to render a bubble chart using data fetched from an API endpoint. The component utilizes state variables to manage the bubble chart data and SVG references. It fetches data from the API, processes it to extract relevant information, and filters the data based on predefined thresholds. The component dynamically generates the bubble chart based on the received data and renders interactive features such as tooltips and zoom functionality. The rendered bubble chart includes circles representing data points, with circle sizes proportional to the number of beneficiaries. Additionally, text labels are provided for each bubble to enhance data interpretation. Overall, the BubbleChartComponent serves as an effective tool for visualizing appeal data within the IFRC Chart Gallery Project.
-        </p>
-        </li>
-        <li>
-        <p>
-            <strong>Component Description: ChordDiagramComponent</strong><br>
-            The ChordDiagramComponent is a React functional component designed to render a chord diagram representing the flow between sectors. The component utilizes a matrix to define the flow of resources from one sector to another. It generates a chord layout based on the provided matrix data, utilizing D3.js to render arcs for each sector and ribbons connecting sectors based on the flow of resources. The rendered diagram includes interactive features such as tooltips displaying the amount of resources transferred between sectors. Additionally, the component implements zoom functionality to allow users to interactively explore the chord diagram. Overall, the ChordDiagramComponent provides an effective visualization of resource flow between sectors within the context of the IFRC Chart Gallery Project.
-        </p>
-        </li>
-        <li>
-        <p>
-            <strong>Component Description: DoughnutChartComponent</strong><br>
-            The DoughnutChartComponent is a React functional component designed to render a doughnut chart representing data fetched from an API. This component utilizes D3.js library for data visualization. The doughnut chart displays the distribution of data points based on their categories. It dynamically fetches data from the specified API endpoint and processes it to count occurrences of each category. The resulting data is then visualized as a doughnut chart where each category is represented as a segment. The component implements interactive features such as zoom functionality and drop shadow effect for visual enhancement. Overall, the DoughnutChartComponent provides an effective visualization of data distribution in the context of the IFRC Chart Gallery Project.
-        </p>
-        </li>
-        <li>
-        <p>
-            <strong>Component Description: StreamGraphComponent</strong><br>
-            The StreamGraphComponent is a React functional component designed to render a stream graph representing data over time. This component utilizes D3.js library for data visualization. The stream graph displays the variation of resource allocation across different sectors over a specific period. The data is hardcoded within the component, representing resource allocation in various sectors for different months. The stream graph provides insights into the trends of resource allocation over time, allowing users to identify patterns and variations in allocation across different sectors. The component also implements interactive features such as zoom functionality for better exploration of the data. Overall, the StreamGraphComponent offers an effective visualization of resource allocation trends in the context of the IFRC Chart Gallery Project.
-        </p>
-        </li>
-        <li>
-        <p>
-            <strong>Component Description: HeatmapComponent</strong><br>
-            The HeatmapComponent is a React functional component designed to render a heatmap visualization representing the distribution of resource allocation requests across different countries. This component utilizes the ArcGIS API for JavaScript for mapping and visualization purposes. The heatmap displays the concentration of resource allocation requests by overlaying heat gradients on a map of the world. The intensity of the heatmap corresponds to the number of resource allocation requests made by each country, providing insights into areas with higher demand for resources. The data for the heatmap is fetched from two separate APIs: one for appeal data and another for country data. The component converts the fetched data into graphics, with each country represented by a point on the map. The intensity of the heat at each point is determined by the amount of resources requested by the respective country. Additionally, the component adds labels next to each point to display the exact amount of resources requested. Overall, the HeatmapComponent offers an interactive and visually appealing visualization of resource allocation requests across countries, aiding in decision-making and resource planning for the IFRC Chart Gallery Project.
-        </p>
-        </li>
-        <li>
-        <p>
-            <strong>Component Description: ForceDirectedGraphComponent</strong><br>
-            The ForceDirectedGraphComponent is a React functional component that renders a force-directed graph visualization representing the relationships between donors and donor groups within the International Federation of Red Cross and Red Crescent Societies (IFRC). This component fetches data from the IFRC API to obtain information about donors and their respective groups. It then processes the fetched data to create nodes and links for the force-directed graph. Each donor and donor group is represented as a node, and relationships between them are represented as links. The component utilizes the D3.js library to create and manipulate SVG elements for rendering the graph. The force-directed layout algorithm is applied to position the nodes and links based on the forces of attraction and repulsion between them, resulting in an aesthetically pleasing layout that highlights the connections between donors and groups. Additionally, the component provides interactive features such as node dragging and zooming for enhanced exploration of the graph. Overall, the ForceDirectedGraphComponent offers a visual representation of donor relationships within the IFRC, aiding in understanding the network of contributions and collaborations among donors and donor groups.
-        </p>
-        </li>
-        <li>
-        <p>
-            <strong>Component Description: HierarchicalLayoutComponent</strong><br>
-            The HierarchicalLayoutComponent is a React functional component responsible for rendering a hierarchical layout visualization of project data from the International Federation of Red Cross and Red Crescent Societies (IFRC) API. This component fetches data from the IFRC API, organizes it hierarchically based on region and country, and then visualizes the hierarchical structure using a force-directed graph layout. Each region and country is represented as a node in the graph, with projects belonging to each country nested within their respective country nodes. The hierarchical structure is rendered using D3.js, a JavaScript library for data visualization, which creates SVG elements for nodes and links in the graph. The force-directed layout algorithm positions the nodes and links based on attractive and repulsive forces, resulting in a visually appealing representation of the hierarchical data. The component also provides interactive features such as node dragging and zooming for enhanced exploration of the hierarchical layout. Overall, the HierarchicalLayoutComponent offers a clear and intuitive visualization of project data organized by region and country within the IFRC, facilitating the understanding of project distributions and relationships.
-        </p>
-        </li>
-        <li>
-        <p>
-            <strong>Component Description: Dashboard</strong><br>
-            The Dashboard component serves as the main user interface for displaying various data visualizations related to the International Federation of Red Cross and Red Crescent Societies (IFRC) appeals and humanitarian activities. It utilizes React.js for building a responsive and interactive dashboard interface. The dashboard consists of resizable boxes containing different types of data visualizations, each encapsulated within its respective component. These visualizations include hierarchical layout, force-directed graph, chord diagram, stream graph, doughnut chart, heat map, bar chart, line chart, and bubble chart components. The component also includes functionality for resizing the visualizations based on window size changes, ensuring optimal display across different devices and screen sizes. Overall, the Dashboard component offers a comprehensive overview of IFRC data thro
-        </li>
-        <li>
-        <p>
-            <strong>Component Description: App</strong><br>
-            The App component serves as the main entry point for the application. It is responsible for rendering the entire user interface and managing the state of different components. Here's a breakdown of its key functionalities:<br><br>
-            1. <strong>State Management:</strong> The component utilizes React's useState hook to manage state variables such as svgSize, graphSize, and activeComponent. These state variables store information about the dimensions of SVG elements, the size of resizable graph components, and the currently active component, respectively.<br><br>
-            2. <strong>Event Handling:</strong> The handleGraphResize function is responsible for updating the graphSize state when the user resizes the graph components. It listens for resize events and adjusts the size accordingly.<br><br>
-            3. <strong>Effect Hooks:</strong> The component utilizes React's useEffect hook to handle side effects such as updating the dimensions of SVG elements (svgSize) and graph components (graphSize) when the window is resized. It ensures that the visualizations remain responsive to changes in the viewport size.<br><br>
-            4. <strong>Rendering Graph Components:</strong> The renderGraphComponent function dynamically renders different types of data visualization components based on the activeComponent state variable. It switches between components such as hierarchical layout, force-directed graph, chord diagram, stream graph, doughnut chart, heat map, bar chart, line chart, bubble chart, and the dashboard itself.<br><br>
-            5. <strong>User Interface:</strong> The component renders a set of buttons in the button-container div, allowing users to switch between different visualization components. It also displays the title of the currently active component in the graph-title div.<br><br>
-            6. <strong>Footer:</strong> The component includes a Footer sub-component, which renders the footer section containing information about the chart gallery and the current year.<br><br>
-            Overall, the App component serves as the backbone of the application, orchestrating the rendering of various data visualizations and providing a cohesive user experience for exploring IFRC data.
-        </p>
-        </li>
-    </ul>
-    <h3 class="text-center">APIs Used</h3>
-    <p>Some graphs like the Chord Diagram, and the Stream Graph use hard-coded data due to a lack of relevant data from the IFRC GO API. The rest of the graphs use API data from the API endpoint, https://goadmin.ifrc.org/api/.</p>
+    <div class="contentwrap">
+		<h3 class="text-center">Brief Description of Each Component</h3>
+		
+		<ul class="info_list">
+			<li>
+				<span class="icon"></span>
+				<div class="cont">
+					<div class="title">Component Description: <strong>BarChartComponent</strong></div>
+					<div class="desc">The BarChartComponent is a React functional component designed to render a bar chart using D3.js library. It fetches data from an API endpoint, processes it, and dynamically generates the bar chart based on the received data. The component utilizes state variables to manage the bar chart data and SVG references. It employs the useEffect hook to fetch and process data on component mount and to render and update the chart based on changes in dimensions or data. The rendered bar chart includes interactive features such as hover tooltips and zoom functionality, enhancing user engagement and exploration of the data. Overall, the BarChartComponent serves as a flexible and user-friendly tool for visualizing appeal data within the IFRC Chart Gallery Project.</div>
+				</div>
+			</li>
+			<li>
+				<span class="icon"></span>
+				<div class="cont">
+					<div class="title">Component Description: <strong>LineChartComponent</strong></div>
+					<div class="desc">The LineChartComponent is a React functional component designed to render a line chart using D3.js library. It fetches data from an API endpoint, processes it to prepare the data for each region, and dynamically generates the line chart based on the received data. The component utilizes state variables to manage the line chart data and SVG references. It employs the useEffect hook to fetch and process data on component mount and to render and update the chart based on changes in dimensions or data. The rendered line chart includes interactive features such as zoom functionality and tooltips, enhancing user engagement and exploration of the data. Overall, the LineChartComponent serves as a flexible and user-friendly tool for visualizing appeal data within the IFRC Chart Gallery Project.</div>
+				</div>
+			</li>
+			<li>
+				<span class="icon"></span>
+				<div class="cont">
+					<div class="title">Component Description: <strong>BubbleChartComponent</strong></div>
+					<div class="desc">The BubbleChartComponent is a React functional component designed to render a bubble chart using data fetched from an API endpoint. The component utilizes state variables to manage the bubble chart data and SVG references. It fetches data from the API, processes it to extract relevant information, and filters the data based on predefined thresholds. The component dynamically generates the bubble chart based on the received data and renders interactive features such as tooltips and zoom functionality. The rendered bubble chart includes circles representing data points, with circle sizes proportional to the number of beneficiaries. Additionally, text labels are provided for each bubble to enhance data interpretation. Overall, the BubbleChartComponent serves as an effective tool for visualizing appeal data within the IFRC Chart Gallery Project.</div>
+				</div>
+			</li>
+			<li>
+				<span class="icon"></span>
+				<div class="cont">
+					<div class="title">Component Description: <strong>ChordDiagramComponent</strong></div>
+					<div class="desc">The ChordDiagramComponent is a React functional component designed to render a chord diagram representing the flow between sectors. The component utilizes a matrix to define the flow of resources from one sector to another. It generates a chord layout based on the provided matrix data, utilizing D3.js to render arcs for each sector and ribbons connecting sectors based on the flow of resources. The rendered diagram includes interactive features such as tooltips displaying the amount of resources transferred between sectors. Additionally, the component implements zoom functionality to allow users to interactively explore the chord diagram. Overall, the ChordDiagramComponent provides an effective visualization of resource flow between sectors within the context of the IFRC Chart Gallery Project.</div>
+				</div>
+			</li>
+			<li>
+				<span class="icon"></span>
+				<div class="cont">
+					<div class="title">Component Description: <strong>DoughnutChartComponent</strong></div>
+					<div class="desc">The DoughnutChartComponent is a React functional component designed to render a doughnut chart representing data fetched from an API. This component utilizes D3.js library for data visualization. The doughnut chart displays the distribution of data points based on their categories. It dynamically fetches data from the specified API endpoint and processes it to count occurrences of each category. The resulting data is then visualized as a doughnut chart where each category is represented as a segment. The component implements interactive features such as zoom functionality and drop shadow effect for visual enhancement. Overall, the DoughnutChartComponent provides an effective visualization of data distribution in the context of the IFRC Chart Gallery Project.</div>
+				</div>
+			</li>
+			<li>
+				<span class="icon"></span>
+				<div class="cont">
+					<div class="title">Component Description: <strong>StreamGraphComponent</strong></div>
+					<div class="desc">The StreamGraphComponent is a React functional component designed to render a stream graph representing data over time. This component utilizes D3.js library for data visualization. The stream graph displays the variation of resource allocation across different sectors over a specific period. The data is hardcoded within the component, representing resource allocation in various sectors for different months. The stream graph provides insights into the trends of resource allocation over time, allowing users to identify patterns and variations in allocation across different sectors. The component also implements interactive features such as zoom functionality for better exploration of the data. Overall, the StreamGraphComponent offers an effective visualization of resource allocation trends in the context of the IFRC Chart Gallery Project.</div>
+				</div>
+			</li>
+			<li>
+				<span class="icon"></span>
+				<div class="cont">
+					<div class="title">Component Description: <strong>HeatmapComponent</strong></div>
+					<div class="desc">The HeatmapComponent is a React functional component designed to render a heatmap visualization representing the distribution of resource allocation requests across different countries. This component utilizes the ArcGIS API for JavaScript for mapping and visualization purposes. The heatmap displays the concentration of resource allocation requests by overlaying heat gradients on a map of the world. The intensity of the heatmap corresponds to the number of resource allocation requests made by each country, providing insights into areas with higher demand for resources. The data for the heatmap is fetched from two separate APIs: one for appeal data and another for country data. The component converts the fetched data into graphics, with each country represented by a point on the map. The intensity of the heat at each point is determined by the amount of resources requested by the respective country. Additionally, the component adds labels next to each point to display the exact amount of resources requested. Overall, the HeatmapComponent offers an interactive and visually appealing visualization of resource allocation requests across countries, aiding in decision-making and resource planning for the IFRC Chart Gallery Project.</div>
+				</div>
+			</li>
+			<li>
+				<span class="icon"></span>
+				<div class="cont">
+					<div class="title">Component Description: <strong>ForceDirectedGraphComponent</strong></div>
+					<div class="desc">The ForceDirectedGraphComponent is a React functional component that renders a force-directed graph visualization representing the relationships between donors and donor groups within the International Federation of Red Cross and Red Crescent Societies (IFRC). This component fetches data from the IFRC API to obtain information about donors and their respective groups. It then processes the fetched data to create nodes and links for the force-directed graph. Each donor and donor group is represented as a node, and relationships between them are represented as links. The component utilizes the D3.js library to create and manipulate SVG elements for rendering the graph. The force-directed layout algorithm is applied to position the nodes and links based on the forces of attraction and repulsion between them, resulting in an aesthetically pleasing layout that highlights the connections between donors and groups. Additionally, the component provides interactive features such as node dragging and zooming for enhanced exploration of the graph. Overall, the ForceDirectedGraphComponent offers a visual representation of donor relationships within the IFRC, aiding in understanding the network of contributions and collaborations among donors and donor groups.</div>
+				</div>
+			</li>
+			<li>
+				<span class="icon"></span>
+				<div class="cont">
+					<div class="title">Component Description: <strong>HierarchicalLayoutComponent</strong></div>
+					<div class="desc">The HierarchicalLayoutComponent is a React functional component responsible for rendering a hierarchical layout visualization of project data from the International Federation of Red Cross and Red Crescent Societies (IFRC) API. This component fetches data from the IFRC API, organizes it hierarchically based on region and country, and then visualizes the hierarchical structure using a force-directed graph layout. Each region and country is represented as a node in the graph, with projects belonging to each country nested within their respective country nodes. The hierarchical structure is rendered using D3.js, a JavaScript library for data visualization, which creates SVG elements for nodes and links in the graph. The force-directed layout algorithm positions the nodes and links based on attractive and repulsive forces, resulting in a visually appealing representation of the hierarchical data. The component also provides interactive features such as node dragging and zooming for enhanced exploration of the hierarchical layout. Overall, the HierarchicalLayoutComponent offers a clear and intuitive visualization of project data organized by region and country within the IFRC, facilitating the understanding of project distributions and relationships.</div>
+				</div>
+			</li>
+			<li>
+				<span class="icon"></span>
+				<div class="cont">
+					<div class="title">Component Description: <strong>Dashboard</strong></div>
+					<div class="desc">The Dashboard component serves as the main user interface for displaying various data visualizations related to the International Federation of Red Cross and Red Crescent Societies (IFRC) appeals and humanitarian activities. It utilizes React.js for building a responsive and interactive dashboard interface. The dashboard consists of resizable boxes containing different types of data visualizations, each encapsulated within its respective component. These visualizations include hierarchical layout, force-directed graph, chord diagram, stream graph, doughnut chart, heat map, bar chart, line chart, and bubble chart components. The component also includes functionality for resizing the visualizations based on window size changes, ensuring optimal display across different devices and screen sizes. Overall, the Dashboard component offers a comprehensive overview of IFRC data thro</div>
+				</div>
+			</li>
+			<li>
+				<span class="icon"></span>
+				<div class="cont">
+					<div class="title">Component Description: <strong>App</strong></div>
+					<div class="desc">
+						The App component serves as the main entry point for the application. It is responsible for rendering the entire user interface and managing the state of different components. Here's a breakdown of its key functionalities:
+						<ul class="numlist etc">
+							<li><i class="num">1</i> <div><strong>State Management:</strong> The component utilizes React's useState hook to manage state variables such as svgSize, graphSize, and activeComponent. These state variables store information about the dimensions of SVG elements, the size of resizable graph components, and the currently active component, respectively.</div></li>
+							<li><i class="num">2</i> <div><strong>Event Handling:</strong> The handleGraphResize function is responsible for updating the graphSize state when the user resizes the graph components. It listens for resize events and adjusts the size accordingly.</div></li>
+							<li><i class="num">3</i> <div><strong>Effect Hooks:</strong> The component utilizes React's useEffect hook to handle side effects such as updating the dimensions of SVG elements (svgSize) and graph components (graphSize) when the window is resized. It ensures that the visualizations remain responsive to changes in the viewport size.</div></li>
+							<li><i class="num">4</i> <div><strong>Rendering Graph Components:</strong> The renderGraphComponent function dynamically renders different types of data visualization components based on the activeComponent state variable. It switches between components such as hierarchical layout, force-directed graph, chord diagram, stream graph, doughnut chart, heat map, bar chart, line chart, bubble chart, and the dashboard itself.</div></li>
+							<li><i class="num">5</i> <div><strong>User Interface:</strong> The component renders a set of buttons in the button-container div, allowing users to switch between different visualization components. It also displays the title of the currently active component in the graph-title div.</div></li>
+							<li><i class="num">6</i> <div><strong>Footer:</strong> The component includes a Footer sub-component, which renders the footer section containing information about the chart gallery and the current year.<br><br>
+						Overall, the App component serves as the backbone of the application, orchestrating the rendering of various data visualizations and providing a cohesive user experience for exploring IFRC data.</div></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+    <div class="contentwrap">
+		<h3 class="text-center">APIs Used</h3>
+    	<p>Some graphs like the Chord Diagram, and the Stream Graph use hard-coded data due to a lack of relevant data from the IFRC GO API. The rest of the graphs use API data from the API endpoint, https://goadmin.ifrc.org/api/.</p>
+	</div>
 </section>
 
 <div id="footer-placeholder"></div>
